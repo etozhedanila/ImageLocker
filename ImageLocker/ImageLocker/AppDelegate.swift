@@ -14,12 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        showCreatePassword()
+        showCreatePin()
         return true
     }
     
-    private func showCreatePassword() {
-        let vc = CreatePasswordAssembly.createPassword().viewController
+    private func showCreatePin() {
+        let vc = CreatePinAssembly.createPin().viewController
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }

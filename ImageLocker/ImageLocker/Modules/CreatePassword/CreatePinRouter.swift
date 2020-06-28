@@ -1,5 +1,5 @@
 //
-//  CreatePasswordRouter.swift
+//  CreatePinRouter.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 28.06.2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class CreatePasswordRouter {
+class CreatePinRouter {
     
 }

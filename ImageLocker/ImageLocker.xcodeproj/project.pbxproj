@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		AB76B17D9E1B8B38BF84FEB3 /* Pods_ImageLocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */; };
 		F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2ED124A90FC000623813 /* AppDelegate.swift */; };
-		F68B2ED624A90FC000623813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2ED524A90FC000623813 /* ViewController.swift */; };
 		F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EDA24A90FC000623813 /* ImageLocker.xcdatamodeld */; };
 		F68B2EDE24A90FC200623813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F68B2EDD24A90FC200623813 /* Assets.xcassets */; };
 		F68B2EE124A90FC200623813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68B2EDF24A90FC200623813 /* LaunchScreen.storyboard */; };
-		F68B2EE924A916F900623813 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EE824A916F900623813 /* CreatePasswordViewController.swift */; };
-		F68B2EEC24A9171F00623813 /* CreatePasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EEB24A9171F00623813 /* CreatePasswordAssembly.swift */; };
-		F68B2EEE24A9172B00623813 /* CreatePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EED24A9172B00623813 /* CreatePasswordPresenter.swift */; };
-		F68B2EF024A9173B00623813 /* CreatePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EEF24A9173B00623813 /* CreatePasswordInteractor.swift */; };
-		F68B2EF224A9174D00623813 /* CreatePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EF124A9174D00623813 /* CreatePasswordRouter.swift */; };
+		F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EE824A916F900623813 /* CreatePinViewController.swift */; };
+		F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EEB24A9171F00623813 /* CreatePinAssembly.swift */; };
+		F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EED24A9172B00623813 /* CreatePinPresenter.swift */; };
+		F68B2EF024A9173B00623813 /* CreatePinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EEF24A9173B00623813 /* CreatePinInteractor.swift */; };
+		F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EF124A9174D00623813 /* CreatePinRouter.swift */; };
+		F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EF424A91DAB00623813 /* PincodeView.swift */; };
+		F68B2F0E24A9342900623813 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F0D24A9342900623813 /* Pin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,16 +26,17 @@
 		DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageLocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68B2ECE24A90FC000623813 /* ImageLocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68B2ED124A90FC000623813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F68B2ED524A90FC000623813 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F68B2EDB24A90FC000623813 /* ImageLocker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageLocker.xcdatamodel; sourceTree = "<group>"; };
 		F68B2EDD24A90FC200623813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F68B2EE024A90FC200623813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F68B2EE224A90FC200623813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F68B2EE824A916F900623813 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
-		F68B2EEB24A9171F00623813 /* CreatePasswordAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordAssembly.swift; sourceTree = "<group>"; };
-		F68B2EED24A9172B00623813 /* CreatePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordPresenter.swift; sourceTree = "<group>"; };
-		F68B2EEF24A9173B00623813 /* CreatePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordInteractor.swift; sourceTree = "<group>"; };
-		F68B2EF124A9174D00623813 /* CreatePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordRouter.swift; sourceTree = "<group>"; };
+		F68B2EE824A916F900623813 /* CreatePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinViewController.swift; sourceTree = "<group>"; };
+		F68B2EEB24A9171F00623813 /* CreatePinAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinAssembly.swift; sourceTree = "<group>"; };
+		F68B2EED24A9172B00623813 /* CreatePinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinPresenter.swift; sourceTree = "<group>"; };
+		F68B2EEF24A9173B00623813 /* CreatePinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinInteractor.swift; sourceTree = "<group>"; };
+		F68B2EF124A9174D00623813 /* CreatePinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinRouter.swift; sourceTree = "<group>"; };
+		F68B2EF424A91DAB00623813 /* PincodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PincodeView.swift; sourceTree = "<group>"; };
+		F68B2F0D24A9342900623813 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,12 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				F68B2ED124A90FC000623813 /* AppDelegate.swift */,
-				F68B2ED524A90FC000623813 /* ViewController.swift */,
 				F68B2EDD24A90FC200623813 /* Assets.xcassets */,
 				F68B2EDF24A90FC200623813 /* LaunchScreen.storyboard */,
 				F68B2EE224A90FC200623813 /* Info.plist */,
 				F68B2EDA24A90FC000623813 /* ImageLocker.xcdatamodeld */,
-				F68B2EEA24A9170800623813 /* CreatePassword */,
+				F68B2EF324A91BA800623813 /* Modules */,
 			);
 			path = ImageLocker;
 			sourceTree = "<group>";
@@ -102,13 +103,31 @@
 		F68B2EEA24A9170800623813 /* CreatePassword */ = {
 			isa = PBXGroup;
 			children = (
-				F68B2EEB24A9171F00623813 /* CreatePasswordAssembly.swift */,
-				F68B2EE824A916F900623813 /* CreatePasswordViewController.swift */,
-				F68B2EED24A9172B00623813 /* CreatePasswordPresenter.swift */,
-				F68B2EEF24A9173B00623813 /* CreatePasswordInteractor.swift */,
-				F68B2EF124A9174D00623813 /* CreatePasswordRouter.swift */,
+				F68B2EEB24A9171F00623813 /* CreatePinAssembly.swift */,
+				F68B2EE824A916F900623813 /* CreatePinViewController.swift */,
+				F68B2EED24A9172B00623813 /* CreatePinPresenter.swift */,
+				F68B2EEF24A9173B00623813 /* CreatePinInteractor.swift */,
+				F68B2EF124A9174D00623813 /* CreatePinRouter.swift */,
+				F68B2EF624A91DB400623813 /* views */,
 			);
 			path = CreatePassword;
+			sourceTree = "<group>";
+		};
+		F68B2EF324A91BA800623813 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F68B2EEA24A9170800623813 /* CreatePassword */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F68B2EF624A91DB400623813 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F68B2EF424A91DAB00623813 /* PincodeView.swift */,
+				F68B2F0D24A9342900623813 /* Pin.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,14 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F68B2ED624A90FC000623813 /* ViewController.swift in Sources */,
-				F68B2EF024A9173B00623813 /* CreatePasswordInteractor.swift in Sources */,
+				F68B2EF024A9173B00623813 /* CreatePinInteractor.swift in Sources */,
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
-				F68B2EEE24A9172B00623813 /* CreatePasswordPresenter.swift in Sources */,
-				F68B2EF224A9174D00623813 /* CreatePasswordRouter.swift in Sources */,
-				F68B2EE924A916F900623813 /* CreatePasswordViewController.swift in Sources */,
-				F68B2EEC24A9171F00623813 /* CreatePasswordAssembly.swift in Sources */,
+				F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */,
+				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
+				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
+				F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */,
+				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,
+				F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

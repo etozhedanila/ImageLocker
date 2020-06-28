@@ -1,5 +1,5 @@
 //
-//  CreatePasswordAssembly.swift
+//  CreatePinAssembly.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 28.06.2020.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class CreatePasswordAssembly {
-    static func createPassword() -> CreatePasswordViewInput {
-        let router = CreatePasswordRouter()
-        let presenter = CreatePasswordPresenter(router: router)
-        let interactor = CreatePasswordInteractor()
-        let viewController = CreatePasswordViewController()
+class CreatePinAssembly {
+    static func createPin() -> CreatePinViewInput {
+        let router = CreatePinRouter()
+        let presenter = CreatePinPresenter(router: router)
+        let interactor = CreatePinInteractor()
+        let viewController = CreatePinViewController()
         presenter.interactor = interactor
         presenter.view = viewController
         interactor.presenter = presenter
