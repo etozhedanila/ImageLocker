@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB76B17D9E1B8B38BF84FEB3 /* Pods_ImageLocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */; };
 		F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2ED124A90FC000623813 /* AppDelegate.swift */; };
 		F68B2ED624A90FC000623813 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2ED524A90FC000623813 /* ViewController.swift */; };
 		F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EDA24A90FC000623813 /* ImageLocker.xcdatamodeld */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		899FBAAC141E1C5B7F943BB3 /* Pods-ImageLocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.release.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.release.xcconfig"; sourceTree = "<group>"; };
+		DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageLocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68B2ECE24A90FC000623813 /* ImageLocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68B2ED124A90FC000623813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F68B2ED524A90FC000623813 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		F68B2EDD24A90FC200623813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F68B2EE024A90FC200623813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F68B2EE224A90FC200623813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB76B17D9E1B8B38BF84FEB3 /* Pods_ImageLocker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C48D3C973372A0DE38D6FE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8AA585C57880C1DAEF411D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */,
+				899FBAAC141E1C5B7F943BB3 /* Pods-ImageLocker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F68B2EC524A90FC000623813 = {
 			isa = PBXGroup;
 			children = (
 				F68B2ED024A90FC000623813 /* ImageLocker */,
 				F68B2ECF24A90FC000623813 /* Products */,
+				A8AA585C57880C1DAEF411D7 /* Pods */,
+				8C48D3C973372A0DE38D6FE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F68B2EE524A90FC200623813 /* Build configuration list for PBXNativeTarget "ImageLocker" */;
 			buildPhases = (
+				75666CC99A44EAC92309A390 /* [CP] Check Pods Manifest.lock */,
 				F68B2ECA24A90FC000623813 /* Sources */,
 				F68B2ECB24A90FC000623813 /* Frameworks */,
 				F68B2ECC24A90FC000623813 /* Resources */,
+				00E34BB31F61B0477B78986F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00E34BB31F61B0477B78986F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageLocker/Pods-ImageLocker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageLocker/Pods-ImageLocker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageLocker/Pods-ImageLocker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75666CC99A44EAC92309A390 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageLocker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F68B2ECA24A90FC000623813 /* Sources */ = {
@@ -270,6 +339,7 @@
 		};
 		F68B2EE624A90FC200623813 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +358,7 @@
 		};
 		F68B2EE724A90FC200623813 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 899FBAAC141E1C5B7F943BB3 /* Pods-ImageLocker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
