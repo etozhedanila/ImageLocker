@@ -1,3 +1,4 @@
 *.xcuserstate
 *.xcbkptlist
 xcuserdata
+*.xcworkspace
