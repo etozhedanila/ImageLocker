@@ -9,13 +9,25 @@
 import UIKit
 import CoreData
 
+let pincodeKey = "com.vitalySubbotin.ImageLocker.pincode"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        showCreatePin()
+        if let pincode = pincode {
+            showEnterPin(pincode: pincode)
+        } else {
+            showCreatePin()
+        }
         return true
+    }
+    
+    private var pincode: String? {
+        let ud = UserDefaults.standard
+        let pincode = ud.string(forKey: pincodeKey)
+        return pincode
     }
     
     private func showCreatePin() {
@@ -25,6 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.setViewControllers([vc], animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    private func showEnterPin(pincode: String) {
+//        let navigationController = UINavigationController()
+//        let appRouter = AppRouter(navigationController: navigationController)
+//        let vc =
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
     }
 
     // MARK: - Core Data stack

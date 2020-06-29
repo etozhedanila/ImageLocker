@@ -22,7 +22,8 @@ class CreatePinInteractor: CreatePinInteractorInput {
     weak var presenter: CreatePinInteractorOutput?
     
     func save(pincode: String) {
-        
+        let ud = UserDefaults.standard
+        ud.set(pincode, forKey: pincodeKey)
         presenter?.interactorDidSavePincode(self)
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 //TODO: ADD Touch ID/ FACE ID
+//      ADD Saving pincode
 //      ADD Enter pincode screen
 
 protocol CreatePinViewOutput: class {
