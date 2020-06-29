@@ -9,13 +9,19 @@
 import Foundation
 
 class CreatePinAssembly {
-    static func createPin() -> CreatePinViewInput {
-        let router = CreatePinRouter()
+    private var pincode = ""
+    init(pincode: String = "") {
+        self.pincode = pincode
+    }
+    
+    func createPin(appRouter: AppRouter) -> CreatePinViewInput {
+        let router = CreatePinRouter(router: appRouter)
         let presenter = CreatePinPresenter(router: router)
         let interactor = CreatePinInteractor()
         let viewController = CreatePinViewController()
         presenter.interactor = interactor
         presenter.view = viewController
+        presenter.pincode = pincode
         interactor.presenter = presenter
         viewController.presenter = presenter
         return viewController

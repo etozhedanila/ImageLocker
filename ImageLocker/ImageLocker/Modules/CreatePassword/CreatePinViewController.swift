@@ -12,6 +12,8 @@ import SnapKit
 protocol CreatePinViewInput: class {
     var presenter: CreatePinViewOutput? { get set }
     var viewController: UIViewController { get }
+    
+    func setupAsConfirm()
 }
 
 class CreatePinViewController: UIViewController, CreatePinViewInput {
@@ -19,12 +21,13 @@ class CreatePinViewController: UIViewController, CreatePinViewInput {
     var viewController: UIViewController { return self }
     
     private enum LocalizedString {
-        static let title = "Придумайте пин-код"
+        static let createTitle = "Придумайте пин-код"
+        static let confirmTitle = "Подтвердите пин-код"
     }
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedString.title
+        label.text = LocalizedString.createTitle
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .center
@@ -47,14 +50,23 @@ class CreatePinViewController: UIViewController, CreatePinViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
         makeConstraints()
         presenter?.viewDidLoad(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pincodeView.resetView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         pincodeView.becomeFirstResponder()
+    }
+    
+    func setupAsConfirm() {
+        titleLabel.text = LocalizedString.confirmTitle
     }
     
     private func makeConstraints() {

@@ -48,6 +48,11 @@ class PincodeView: UIView, UITextInputTraits {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func resetView() {
+        pincode = ""
+        updateStack(with: "")
+    }
+    
     private func makeConstraints() {
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

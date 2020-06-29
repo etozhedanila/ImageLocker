@@ -19,8 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func showCreatePin() {
-        let vc = CreatePinAssembly.createPin().viewController
-        window?.rootViewController = vc
+        let navigationController = UINavigationController()
+        let appRouter = AppRouter(navigationController: navigationController)
+        let vc = CreatePinAssembly().createPin(appRouter: appRouter).viewController
+        navigationController.setViewControllers([vc], animated: false)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
