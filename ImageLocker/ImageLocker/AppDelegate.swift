@@ -40,11 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func showEnterPin(pincode: String) {
-//        let navigationController = UINavigationController()
-//        let appRouter = AppRouter(navigationController: navigationController)
-//        let vc =
-//        window?.rootViewController = navigationController
-//        window?.makeKeyAndVisible()
+        let navigationController = UINavigationController()
+        let appRouter = AppRouter(navigationController: navigationController)
+        let vc = EnterPincodeAssembly(pincode: pincode).enterPincode(appRouter: appRouter).viewController
+        navigationController.setViewControllers([vc], animated: false)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
     // MARK: - Core Data stack

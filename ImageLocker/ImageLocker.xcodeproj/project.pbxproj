@@ -20,6 +20,11 @@
 		F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EF424A91DAB00623813 /* PincodeView.swift */; };
 		F68B2F0E24A9342900623813 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F0D24A9342900623813 /* Pin.swift */; };
 		F68B2F1024AA566800623813 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F0F24AA566800623813 /* AppRouter.swift */; };
+		F68B2F2624AA68B800623813 /* EnterPincodeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2524AA68B800623813 /* EnterPincodeAssembly.swift */; };
+		F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2824AA68E600623813 /* EnterPincodePresenter.swift */; };
+		F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */; };
+		F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */; };
+		F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +44,11 @@
 		F68B2EF424A91DAB00623813 /* PincodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PincodeView.swift; sourceTree = "<group>"; };
 		F68B2F0D24A9342900623813 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		F68B2F0F24AA566800623813 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		F68B2F2524AA68B800623813 /* EnterPincodeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeAssembly.swift; sourceTree = "<group>"; };
+		F68B2F2824AA68E600623813 /* EnterPincodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodePresenter.swift; sourceTree = "<group>"; };
+		F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeRouter.swift; sourceTree = "<group>"; };
+		F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeInteractor.swift; sourceTree = "<group>"; };
+		F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeViewController.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +112,7 @@
 			path = ImageLocker;
 			sourceTree = "<group>";
 		};
-		F68B2EEA24A9170800623813 /* CreatePassword */ = {
+		F68B2EEA24A9170800623813 /* CreatePincode */ = {
 			isa = PBXGroup;
 			children = (
 				F68B2EEB24A9171F00623813 /* CreatePinAssembly.swift */,
@@ -112,14 +122,15 @@
 				F68B2EF124A9174D00623813 /* CreatePinRouter.swift */,
 				F68B2EF624A91DB400623813 /* views */,
 			);
-			path = CreatePassword;
+			path = CreatePincode;
 			sourceTree = "<group>";
 		};
 		F68B2EF324A91BA800623813 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				F68B2F0F24AA566800623813 /* AppRouter.swift */,
-				F68B2EEA24A9170800623813 /* CreatePassword */,
+				F68B2F2724AA68CE00623813 /* EnterPincode */,
+				F68B2EEA24A9170800623813 /* CreatePincode */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -131,6 +142,18 @@
 				F68B2F0D24A9342900623813 /* Pin.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		F68B2F2724AA68CE00623813 /* EnterPincode */ = {
+			isa = PBXGroup;
+			children = (
+				F68B2F2524AA68B800623813 /* EnterPincodeAssembly.swift */,
+				F68B2F2824AA68E600623813 /* EnterPincodePresenter.swift */,
+				F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */,
+				F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */,
+				F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */,
+			);
+			path = EnterPincode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +274,14 @@
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
 				F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */,
+				F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */,
 				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
+				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
+				F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */,
 				F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */,
+				F68B2F2624AA68B800623813 /* EnterPincodeAssembly.swift in Sources */,
+				F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */,
 				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,
 				F68B2F1024AA566800623813 /* AppRouter.swift in Sources */,
 				F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */,
