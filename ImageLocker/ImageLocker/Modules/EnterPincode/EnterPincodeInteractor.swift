@@ -22,6 +22,12 @@ class EnterPincodeInteractor: EnterPincodeInteractorInput {
     weak var presenter: EnterPincodeInteractorOutput?
     
     func check(pincode: String) {
-        
+        let ud = UserDefaults.standard
+        guard let savedPincode = ud.string(forKey: pincodeKey) else { return }
+        if savedPincode == pincode {
+            presenter?.interactor(self, didCompressSuccessful: true)
+        } else {
+            presenter?.interactor(self, didCompressSuccessful: false)
+        }
     }
 }

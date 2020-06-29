@@ -31,12 +31,16 @@ class EnterPincodePresenter: EnterPincodeViewOutput {
 
 extension EnterPincodePresenter: EnterPincodeInteractorOutput {
     func interactor(_ interactor: EnterPincodeInteractorInput, didCompressSuccessful isSuccess: Bool) {
-        
+        if isSuccess {
+            router.showGallery()
+        } else {
+            view?.reset()
+        }
     }
 }
 
 extension EnterPincodePresenter: PincodeViewDelegate {
     func pincodeView(_ pincodeView: PincodeView, didFinishEnterPincode pincode: String) {
-        
+        interactor?.check(pincode: pincode)
     }
 }
