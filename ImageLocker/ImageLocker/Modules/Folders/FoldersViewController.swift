@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FoldersViewInput: class {
+protocol FoldersViewInput: TableEditable {
     var presenter: FoldersViewOutput? { get set }
     var viewController: UIViewController { get }
     
@@ -18,7 +18,7 @@ class FoldersViewController: UIViewController, FoldersViewInput {
     var presenter: FoldersViewOutput?
     var viewController: UIViewController { return self }
     
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
