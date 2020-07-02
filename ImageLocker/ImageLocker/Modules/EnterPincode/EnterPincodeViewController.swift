@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 protocol EnterPincodeViewInput: class {
     var viewController: UIViewController { get }
@@ -45,10 +46,31 @@ class EnterPincodeViewController: UIViewController, EnterPincodeViewInput {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         pincodeView.becomeFirstResponder()
+        activateBiometricAuthentication()
     }
     
     func reset() {
         pincodeView.resetView()
+    }
+    
+    private func activateBiometricAuthentication() {
+        let context = LAContext()
+        let localizedReason = "Hi!"
+        var authError: NSError?
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: localizedReason) { [weak self] (isSuccess, error) in
+                guard let self = self else { return }
+                if isSuccess {
+                    DispatchQueue.main.async {
+                        self.presenter?.viewDidPassAuth(self)
+                    }
+                } else {
+                    print(String(describing: error))
+                }
+            }
+        } else {
+            print("can't EvaluatePolicy")
+        }
     }
     
     private func makeConstraints() {

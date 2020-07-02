@@ -11,6 +11,7 @@ import Foundation
 protocol EnterPincodeViewOutput: class {
     var view: EnterPincodeViewInput? { get set }
     func viewDidLoad(_ view: EnterPincodeViewInput)
+    func viewDidPassAuth(_ view: EnterPincodeViewInput)
 }
 
 class EnterPincodePresenter: EnterPincodeViewOutput {
@@ -26,6 +27,10 @@ class EnterPincodePresenter: EnterPincodeViewOutput {
     
     func viewDidLoad(_ view: EnterPincodeViewInput) {
         
+    }
+    
+    func viewDidPassAuth(_ view: EnterPincodeViewInput) {
+        router.showFolders()
     }
 }
 
