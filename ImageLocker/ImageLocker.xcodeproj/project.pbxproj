@@ -25,6 +25,12 @@
 		F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */; };
 		F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */; };
 		F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */; };
+		F69C187724AE74DB0007283D /* FoldersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187624AE74DB0007283D /* FoldersAssembly.swift */; };
+		F69C187A24AE74F10007283D /* FoldersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187924AE74F10007283D /* FoldersPresenter.swift */; };
+		F69C187C24AE74F90007283D /* FoldersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187B24AE74F90007283D /* FoldersRouter.swift */; };
+		F69C187E24AE75090007283D /* FoldersDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187D24AE75090007283D /* FoldersDataManager.swift */; };
+		F69C188024AE75150007283D /* FoldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187F24AE75150007283D /* FoldersViewController.swift */; };
+		F69C188224AE751E0007283D /* FoldersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C188124AE751E0007283D /* FoldersInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +55,12 @@
 		F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeRouter.swift; sourceTree = "<group>"; };
 		F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeInteractor.swift; sourceTree = "<group>"; };
 		F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeViewController.swift; sourceTree = "<group>"; };
+		F69C187624AE74DB0007283D /* FoldersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersAssembly.swift; sourceTree = "<group>"; };
+		F69C187924AE74F10007283D /* FoldersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersPresenter.swift; sourceTree = "<group>"; };
+		F69C187B24AE74F90007283D /* FoldersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersRouter.swift; sourceTree = "<group>"; };
+		F69C187D24AE75090007283D /* FoldersDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersDataManager.swift; sourceTree = "<group>"; };
+		F69C187F24AE75150007283D /* FoldersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersViewController.swift; sourceTree = "<group>"; };
+		F69C188124AE751E0007283D /* FoldersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersInteractor.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				F68B2F0F24AA566800623813 /* AppRouter.swift */,
+				F69C187824AE74E00007283D /* Folders */,
 				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F68B2EEA24A9170800623813 /* CreatePincode */,
 			);
@@ -154,6 +167,19 @@
 				F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */,
 			);
 			path = EnterPincode;
+			sourceTree = "<group>";
+		};
+		F69C187824AE74E00007283D /* Folders */ = {
+			isa = PBXGroup;
+			children = (
+				F69C187624AE74DB0007283D /* FoldersAssembly.swift */,
+				F69C187924AE74F10007283D /* FoldersPresenter.swift */,
+				F69C187D24AE75090007283D /* FoldersDataManager.swift */,
+				F69C187F24AE75150007283D /* FoldersViewController.swift */,
+				F69C188124AE751E0007283D /* FoldersInteractor.swift */,
+				F69C187B24AE74F90007283D /* FoldersRouter.swift */,
+			);
+			path = Folders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,18 +299,24 @@
 				F68B2EF024A9173B00623813 /* CreatePinInteractor.swift in Sources */,
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
+				F69C187A24AE74F10007283D /* FoldersPresenter.swift in Sources */,
 				F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */,
 				F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */,
 				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
 				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
 				F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */,
+				F69C187C24AE74F90007283D /* FoldersRouter.swift in Sources */,
 				F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */,
 				F68B2F2624AA68B800623813 /* EnterPincodeAssembly.swift in Sources */,
 				F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */,
 				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,
 				F68B2F1024AA566800623813 /* AppRouter.swift in Sources */,
+				F69C188024AE75150007283D /* FoldersViewController.swift in Sources */,
+				F69C187E24AE75090007283D /* FoldersDataManager.swift in Sources */,
+				F69C188224AE751E0007283D /* FoldersInteractor.swift in Sources */,
 				F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */,
+				F69C187724AE74DB0007283D /* FoldersAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

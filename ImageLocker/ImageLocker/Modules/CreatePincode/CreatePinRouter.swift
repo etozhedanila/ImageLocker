@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CreatePinRouter: RouterInterface {
+class CreatePinRouter: RouterInterface, RouteFolders {
     var router: AppRouter
     
     init(router: AppRouter) {

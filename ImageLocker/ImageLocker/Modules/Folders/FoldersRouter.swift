@@ -1,15 +1,16 @@
 //
-//  EnterPincodeRouter.swift
+//  FoldersRouter.swift
 //  ImageLocker
 //
-//  Created by Виталий Субботин on 29.06.2020.
+//  Created by Виталий Субботин on 02.07.2020.
 //  Copyright © 2020 Виталий Субботин. All rights reserved.
 //
 
 import Foundation
 
-class EnterPincodeRouter: RouterInterface, RouteFolders {
-    var router: AppRouter
+class FoldersRouter: RouterInterface {
+    let router: AppRouter
+    
     init(router: AppRouter) {
         self.router = router
     }

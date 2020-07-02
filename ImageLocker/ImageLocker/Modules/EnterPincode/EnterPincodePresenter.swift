@@ -32,7 +32,7 @@ class EnterPincodePresenter: EnterPincodeViewOutput {
 extension EnterPincodePresenter: EnterPincodeInteractorOutput {
     func interactor(_ interactor: EnterPincodeInteractorInput, didCompressSuccessful isSuccess: Bool) {
         if isSuccess {
-            router.showGallery()
+            router.showFolders()
         } else {
             view?.reset()
         }
