@@ -33,6 +33,7 @@
 		F69C188224AE751E0007283D /* FoldersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C188124AE751E0007283D /* FoldersInteractor.swift */; };
 		F69C18AC24AE80780007283D /* TableEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AB24AE80780007283D /* TableEditable.swift */; };
 		F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */; };
+		F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18B024AE8C620007283D /* CreateFolderAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		F69C188124AE751E0007283D /* FoldersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersInteractor.swift; sourceTree = "<group>"; };
 		F69C18AB24AE80780007283D /* TableEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEditable.swift; sourceTree = "<group>"; };
 		F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataManager.swift; sourceTree = "<group>"; };
+		F69C18B024AE8C620007283D /* CreateFolderAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderAlert.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				F68B2F0F24AA566800623813 /* AppRouter.swift */,
+				F69C18B224AE8C670007283D /* Alerts */,
 				F69C187824AE74E00007283D /* Folders */,
 				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F68B2EEA24A9170800623813 /* CreatePincode */,
@@ -194,6 +197,14 @@
 				F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F69C18B224AE8C670007283D /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				F69C18B024AE8C620007283D /* CreateFolderAlert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,
 				F68B2F1024AA566800623813 /* AppRouter.swift in Sources */,
 				F69C188024AE75150007283D /* FoldersViewController.swift in Sources */,
+				F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */,
 				F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */,
 				F69C187E24AE75090007283D /* FoldersDataManager.swift in Sources */,
 				F69C188224AE751E0007283D /* FoldersInteractor.swift in Sources */,

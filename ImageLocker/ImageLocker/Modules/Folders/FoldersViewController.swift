@@ -18,11 +18,20 @@ class FoldersViewController: UIViewController, FoldersViewInput {
     var presenter: FoldersViewOutput?
     var viewController: UIViewController { return self }
     
+    private enum LocalizedString {
+        static let title = "Папки"
+    }
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         return tableView
+    }()
+    
+    private lazy var addFolderButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFolderClicked(_:)))
+        return button
     }()
     
     override func loadView() {
@@ -33,9 +42,16 @@ class FoldersViewController: UIViewController, FoldersViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = LocalizedString.title
         navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = addFolderButton
         makeConstraints()
         presenter?.viewDidLoad(self)
+    }
+    
+    
+    @objc private func addFolderClicked(_ sender: UIBarButtonItem) {
+        presenter?.viewDidShowCreateFolder(self)
     }
     
     private func makeConstraints() {
