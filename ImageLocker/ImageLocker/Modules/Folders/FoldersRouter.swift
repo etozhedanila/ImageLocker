@@ -14,4 +14,10 @@ class FoldersRouter: RouterInterface {
     init(router: AppRouter) {
         self.router = router
     }
+    
+    func showFolderCreation() {
+        let alert = CreateFolderAlert()
+        alert.modalPresentationStyle = .overCurrentContext
+        router.present(viewController: alert, animated: false)
+    }
 }
