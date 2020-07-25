@@ -55,11 +55,22 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
         let insertionIndex = dataManager.items.count - 1
         view?.perform(editing: [.init(position: insertionIndex, editionType: .insert)])
     }
+    
+    func interactor(_ interactor: FoldersListInteractorInput, didRemoveDirectory directory: FolderModel) {
+        guard let index = dataManager.items.firstIndex(where: { ($0 as? FolderCellConfigurator)?.model.name == directory.name }) else { return }
+        dataManager.items.remove(at: index)
+        view?.perform(editing: [.init(position: index, editionType: .remove)])
+     }
 }
 
 extension FoldersListPresenter: FoldersListDataManagerDelegate {
     func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int) {
         guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
         router.open(folder: folder)
+    }
+    
+    func dataManager(_ dataManager: FoldersListDataManager, didRemoveDirectoryAt row: Int) {
+        guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
+        interactor?.remove(folder: folder)
     }
 }

@@ -36,8 +36,8 @@ class FolderCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(nameLabel)
-        addSubview(folderImage)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(folderImage)
         makeConstraints()
     }
     
@@ -53,9 +53,14 @@ class FolderCell: UITableViewCell {
         
         nameLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(folderImage.snp.trailing).offset(10)
-            make.top.equalTo(folderImage)
+            make.centerY.equalTo(folderImage)
             make.trailing.equalToSuperview().inset(20)
         }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        
     }
 }
 
