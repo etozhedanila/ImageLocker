@@ -11,12 +11,18 @@ import Foundation
 class FoldersRouter: RouterInterface {
     let router: AppRouter
     
+    private enum LocalizedString {
+        static let createFolder = "Создать новую папку"
+    }
+    
     init(router: AppRouter) {
         self.router = router
     }
     
-    func showFolderCreation() {
+    func showFolderCreation(resultHandler: @escaping (String) -> Void) {
         let alert = CreateFolderAlert()
+        alert.alertTitle = LocalizedString.createFolder
+        alert.resultHandler = resultHandler
         alert.modalPresentationStyle = .overCurrentContext
         router.present(viewController: alert, animated: false)
     }

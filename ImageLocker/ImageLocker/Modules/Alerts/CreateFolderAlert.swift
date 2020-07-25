@@ -35,11 +35,10 @@ class CreateFolderAlert: UIViewController {
             textField.placeholder = LocalizedString.placeholder
         }
         let create = UIAlertAction(title: LocalizedString.create, style: .default) { [weak self] _ in
-            guard let textField = alert.textFields?.first, let text = textField.text else {
-                self?.resultHandler?("")
-                return
+            let text = alert.textFields?.first?.text ?? ""
+            self?.dismiss(animated: false) { [weak self] in
+                self?.resultHandler?(text)
             }
-            self?.resultHandler?(text)
         }
         let cancel = UIAlertAction(title: LocalizedString.cancel, style: .cancel) { [weak self] _ in
             self?.dismiss(animated: false)

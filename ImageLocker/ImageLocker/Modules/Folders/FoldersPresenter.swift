@@ -33,12 +33,21 @@ class FoldersPresenter: FoldersViewOutput {
     }
     
     func viewDidShowCreateFolder(_ view: FoldersViewInput) {
-        router.showFolderCreation()
+        router.showFolderCreation() { [weak self] name in
+            guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+            self?.interactor?.createFolder(name: name)
+        }
     }
 }
 
 extension FoldersPresenter: FoldersInteractorOutput {
-    
+    func interactor(_ interactor: FoldersInteractorInput, didCreateFolder name: String) {
+        let model = FolderCellModel(name: name)
+        let folderConfigurator = FolderCellConfigurator(model: model)
+        dataManager.items.append(folderConfigurator)
+        let insertionIndex = dataManager.items.count - 1
+        view?.perform(editing: [.init(position: insertionIndex, editionType: .insert)])
+    }
 }
 
 extension FoldersPresenter: FoldersDataManagerDelegate {

@@ -26,6 +26,9 @@ class FoldersViewController: UIViewController, FoldersViewInput {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
+        tableView.dataSource = self.presenter?.dataManager
+        tableView.delegate = self.presenter?.dataManager
+        tableView.register(FolderCell.self, forCellReuseIdentifier: String(describing: FolderCell.self))
         return tableView
     }()
     

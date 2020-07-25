@@ -34,6 +34,7 @@
 		F69C18AC24AE80780007283D /* TableEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AB24AE80780007283D /* TableEditable.swift */; };
 		F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */; };
 		F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18B024AE8C620007283D /* CreateFolderAlert.swift */; };
+		F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92D424CC832700B59CF0 /* FolderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		F69C18AB24AE80780007283D /* TableEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEditable.swift; sourceTree = "<group>"; };
 		F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataManager.swift; sourceTree = "<group>"; };
 		F69C18B024AE8C620007283D /* CreateFolderAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderAlert.swift; sourceTree = "<group>"; };
+		F6CC92D424CC832700B59CF0 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 				F69C187F24AE75150007283D /* FoldersViewController.swift */,
 				F69C188124AE751E0007283D /* FoldersInteractor.swift */,
 				F69C187B24AE74F90007283D /* FoldersRouter.swift */,
+				F6CC92D624CC832C00B59CF0 /* cell */,
 			);
 			path = Folders;
 			sourceTree = "<group>";
@@ -205,6 +208,14 @@
 				F69C18B024AE8C620007283D /* CreateFolderAlert.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		F6CC92D624CC832C00B59CF0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC92D424CC832700B59CF0 /* FolderCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F68B2EF024A9173B00623813 /* CreatePinInteractor.swift in Sources */,
+				F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */,
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
 				F69C187A24AE74F10007283D /* FoldersPresenter.swift in Sources */,
