@@ -29,7 +29,7 @@ class FoldersListPresenter: FoldersListViewOutput {
     }
     
     func viewDidLoad(_ view: FoldersListViewInput) {
-        
+        interactor?.loadFolders()
     }
     
     func viewDidTapCreateFolder(_ view: FoldersListViewInput) {
@@ -41,6 +41,13 @@ class FoldersListPresenter: FoldersListViewOutput {
 }
 
 extension FoldersListPresenter: FoldersListInteractorOutput {
+    func interactor(_ interactor: FoldersListInteractorInput, didLoadDirectories directories: [String]) {
+        let foldersConfigurators = directories
+            .map { FolderModel(name: $0) }
+            .map { FolderCellConfigurator(model: $0) }
+        dataManager.items.append(contentsOf: foldersConfigurators)
+    }
+    
     func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String) {
         let model = FolderModel(name: name)
         let folderConfigurator = FolderCellConfigurator(model: model)

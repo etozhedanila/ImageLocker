@@ -52,7 +52,6 @@ class FoldersListViewController: UIViewController, FoldersListViewInput {
         presenter?.viewDidLoad(self)
     }
     
-    
     @objc private func addFolderTapped(_ sender: UIBarButtonItem) {
         presenter?.viewDidTapCreateFolder(self)
     }
