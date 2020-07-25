@@ -13,6 +13,7 @@ protocol FolderViewOutput: class {
     var dataManager: FolderDataManager { get }
     
     func viewDidLoad(_ view: FolderViewInput)
+    func viewDidTapAddImage(_ view: FolderViewInput)
 }
 
 class FolderPresenter: FolderViewOutput {
@@ -30,6 +31,10 @@ class FolderPresenter: FolderViewOutput {
     
     func viewDidLoad(_ view: FolderViewInput) {
         view.configure(title: folder.name)
+    }
+    
+    func viewDidTapAddImage(_ view: FolderViewInput) {
+        router.openPhotoLibrary()
     }
 }
 

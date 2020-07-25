@@ -19,6 +19,11 @@ class FolderViewController: UIViewController, FolderViewInput {
     var viewController: UIViewController { return self }
     var presenter: FolderViewOutput?
     
+    private lazy var addButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
+        return button
+    }()
+    
     override func loadView() {
         super.loadView()
         view.backgroundColor = .white
@@ -32,13 +37,14 @@ class FolderViewController: UIViewController, FolderViewInput {
     }
     
     func configure(title: String) {
-        DispatchQueue.main.async {
-            
-            self.title = title
-        }
+        self.title = title
     }
     
     private func makeConstraints() {
         
+    }
+    
+    @objc private func addTapped(_ sender: UIBarButtonItem) {
+        presenter?.viewDidTapAddImage(self)
     }
 }

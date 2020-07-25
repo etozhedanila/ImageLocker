@@ -15,5 +15,7 @@ class FolderRouter: RouterInterface {
         self.router = router
     }
     
-    
+    func openPhotoLibrary() {
+        
+    }
 }

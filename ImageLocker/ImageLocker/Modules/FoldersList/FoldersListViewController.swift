@@ -33,7 +33,7 @@ class FoldersListViewController: UIViewController, FoldersListViewInput {
     }()
     
     private lazy var addFolderButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFolderClicked(_:)))
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFolderTapped(_:)))
         return button
     }()
     
@@ -53,8 +53,8 @@ class FoldersListViewController: UIViewController, FoldersListViewInput {
     }
     
     
-    @objc private func addFolderClicked(_ sender: UIBarButtonItem) {
-        presenter?.viewDidShowCreateFolder(self)
+    @objc private func addFolderTapped(_ sender: UIBarButtonItem) {
+        presenter?.viewDidTapCreateFolder(self)
     }
     
     private func makeConstraints() {

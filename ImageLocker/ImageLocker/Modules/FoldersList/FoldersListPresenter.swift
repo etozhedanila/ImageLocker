@@ -13,7 +13,7 @@ protocol FoldersListViewOutput: class {
     var dataManager: FoldersListDataManager { get }
     
     func viewDidLoad(_ view: FoldersListViewInput)
-    func viewDidShowCreateFolder(_ view: FoldersListViewInput)
+    func viewDidTapCreateFolder(_ view: FoldersListViewInput)
 }
 
 class FoldersListPresenter: FoldersListViewOutput {
@@ -32,7 +32,7 @@ class FoldersListPresenter: FoldersListViewOutput {
         
     }
     
-    func viewDidShowCreateFolder(_ view: FoldersListViewInput) {
+    func viewDidTapCreateFolder(_ view: FoldersListViewInput) {
         router.showFolderCreation() { [weak self] name in
             guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
             self?.interactor?.createFolder(name: name)
