@@ -42,7 +42,7 @@ class FoldersListPresenter: FoldersListViewOutput {
 
 extension FoldersListPresenter: FoldersListInteractorOutput {
     func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String) {
-        let model = FolderCellModel(name: name)
+        let model = FolderModel(name: name)
         let folderConfigurator = FolderCellConfigurator(model: model)
         dataManager.items.append(folderConfigurator)
         let insertionIndex = dataManager.items.count - 1
@@ -52,6 +52,7 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
 
 extension FoldersListPresenter: FoldersListDataManagerDelegate {
     func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int) {
-        
+        guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
+        router.open(folder: folder)
     }
 }

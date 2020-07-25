@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct FolderCellModel {
+struct FolderModel {
     var name: String
 }
 
-class FolderCellConfigurator: TableCellConfigurator<FolderCell, FolderCellModel> {
-    init(model: FolderCellModel) {
+class FolderCellConfigurator: TableCellConfigurator<FolderCell, FolderModel> {
+    init(model: FolderModel) {
         super.init(model: model, height: 100)
     }
 }
@@ -60,7 +60,7 @@ class FolderCell: UITableViewCell {
 }
 
 extension FolderCell: ConfigurableCell {
-    func configure(model: FolderCellModel) {
+    func configure(model: FolderModel) {
         nameLabel.text = model.name
     }
 }

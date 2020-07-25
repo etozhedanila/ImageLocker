@@ -35,6 +35,12 @@
 		F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */; };
 		F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18B024AE8C620007283D /* CreateFolderAlert.swift */; };
 		F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92D424CC832700B59CF0 /* FolderCell.swift */; };
+		F6CC930024CCA15B00B59CF0 /* FolderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */; };
+		F6CC930324CCA29300B59CF0 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930224CCA29300B59CF0 /* FolderViewController.swift */; };
+		F6CC930524CCA29E00B59CF0 /* FolderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930424CCA29E00B59CF0 /* FolderPresenter.swift */; };
+		F6CC930724CCA2AB00B59CF0 /* FolderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930624CCA2AB00B59CF0 /* FolderRouter.swift */; };
+		F6CC930924CCA2B500B59CF0 /* FolderDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930824CCA2B500B59CF0 /* FolderDataManager.swift */; };
+		F6CC930B24CCA2C100B59CF0 /* FolderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +75,12 @@
 		F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataManager.swift; sourceTree = "<group>"; };
 		F69C18B024AE8C620007283D /* CreateFolderAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderAlert.swift; sourceTree = "<group>"; };
 		F6CC92D424CC832700B59CF0 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderAssembly.swift; sourceTree = "<group>"; };
+		F6CC930224CCA29300B59CF0 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
+		F6CC930424CCA29E00B59CF0 /* FolderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPresenter.swift; sourceTree = "<group>"; };
+		F6CC930624CCA2AB00B59CF0 /* FolderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderRouter.swift; sourceTree = "<group>"; };
+		F6CC930824CCA2B500B59CF0 /* FolderDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDataManager.swift; sourceTree = "<group>"; };
+		F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInteractor.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,9 +163,10 @@
 			children = (
 				F68B2F0F24AA566800623813 /* AppRouter.swift */,
 				F69C18B224AE8C670007283D /* Alerts */,
-				F69C187824AE74E00007283D /* FoldersList */,
 				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F68B2EEA24A9170800623813 /* CreatePincode */,
+				F69C187824AE74E00007283D /* FoldersList */,
+				F6CC930124CCA1B600B59CF0 /* Folder */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -216,6 +229,19 @@
 				F6CC92D424CC832700B59CF0 /* FolderCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		F6CC930124CCA1B600B59CF0 /* Folder */ = {
+			isa = PBXGroup;
+			children = (
+				F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */,
+				F6CC930224CCA29300B59CF0 /* FolderViewController.swift */,
+				F6CC930424CCA29E00B59CF0 /* FolderPresenter.swift */,
+				F6CC930624CCA2AB00B59CF0 /* FolderRouter.swift */,
+				F6CC930824CCA2B500B59CF0 /* FolderDataManager.swift */,
+				F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */,
+			);
+			path = Folder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,16 +362,22 @@
 				F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */,
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
+				F6CC930B24CCA2C100B59CF0 /* FolderInteractor.swift in Sources */,
 				F69C187A24AE74F10007283D /* FoldersListPresenter.swift in Sources */,
+				F6CC930024CCA15B00B59CF0 /* FolderAssembly.swift in Sources */,
 				F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */,
 				F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */,
+				F6CC930524CCA29E00B59CF0 /* FolderPresenter.swift in Sources */,
+				F6CC930924CCA2B500B59CF0 /* FolderDataManager.swift in Sources */,
 				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
 				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
+				F6CC930324CCA29300B59CF0 /* FolderViewController.swift in Sources */,
 				F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */,
 				F69C187C24AE74F90007283D /* FoldersListRouter.swift in Sources */,
 				F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */,
 				F68B2F2624AA68B800623813 /* EnterPincodeAssembly.swift in Sources */,
+				F6CC930724CCA2AB00B59CF0 /* FolderRouter.swift in Sources */,
 				F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */,
 				F69C18AC24AE80780007283D /* TableEditable.swift in Sources */,
 				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,

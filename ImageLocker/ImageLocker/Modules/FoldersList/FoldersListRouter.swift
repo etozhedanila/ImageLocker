@@ -27,7 +27,9 @@ class FoldersListRouter: RouterInterface {
         router.present(viewController: alert, animated: false)
     }
     
-    func openFolder(name: String) {
-        
+    func open(folder: FolderModel) {
+        let folderAssembly = FolderAssembly(folder: folder)
+        let folderVC = folderAssembly.createFolders(appRouter: router).viewController
+        router.push(viewController: folderVC, animated: true)
     }
 }
