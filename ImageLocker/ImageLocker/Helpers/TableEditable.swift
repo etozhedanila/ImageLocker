@@ -28,7 +28,7 @@ extension TableEditable {
         tableView.reloadData()
     }
     
-    func perform(editing: [TableEdition], completion: ((Bool) -> Void)?) {
+    func perform(editing: [TableEdition], completion: ((Bool) -> Void)? = nil) {
         let updates = editing.filter { $0.editionType == .update }
         let updateRows = updates.map { IndexPath(row: $0.position, section: 0) }
         
@@ -40,15 +40,15 @@ extension TableEditable {
         
         tableView.performBatchUpdates({
             if !updateRows.isEmpty {
-                tableView.reloadRows(at: updateRows, with: .automatic)
+                tableView.reloadRows(at: updateRows, with: .none)
             }
             
             if !deletionRows.isEmpty {
-                tableView.reloadRows(at: deletionRows, with: .right)
+                tableView.deleteRows(at: deletionRows, with: .right)
             }
             
             if !insertionRows.isEmpty {
-                tableView.reloadRows(at: insertionRows, with: .automatic)
+                tableView.insertRows(at: insertionRows, with: .fade)
             }
         }, completion: completion)
     }
