@@ -1,5 +1,5 @@
 //
-//  FoldersRouter.swift
+//  FoldersListRouter.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 02.07.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FoldersRouter: RouterInterface {
+class FoldersListRouter: RouterInterface {
     let router: AppRouter
     
     private enum LocalizedString {
@@ -25,5 +25,9 @@ class FoldersRouter: RouterInterface {
         alert.resultHandler = resultHandler
         alert.modalPresentationStyle = .overCurrentContext
         router.present(viewController: alert, animated: false)
+    }
+    
+    func openFolder(name: String) {
+        
     }
 }

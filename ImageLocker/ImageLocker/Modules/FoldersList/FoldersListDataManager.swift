@@ -1,5 +1,5 @@
 //
-//  FoldersDataManager.swift
+//  FoldersListDataManager.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 02.07.2020.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol FoldersDataManagerDelegate: class {
-    func dataManager(_ dataManager: FoldersDataManager, didSelectFolderAt row: Int)
+protocol FoldersListDataManagerDelegate: class {
+    func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int)
 }
 
-class FoldersDataManager: BaseTableDataManager {
-    weak var delegate: FoldersDataManagerDelegate?
+class FoldersListDataManager: BaseTableDataManager {
+    weak var delegate: FoldersListDataManagerDelegate?
 }
 
-extension FoldersDataManager: UITableViewDelegate {
+extension FoldersListDataManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return items[indexPath.row].height
     }

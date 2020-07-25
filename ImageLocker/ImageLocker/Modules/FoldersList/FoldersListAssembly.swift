@@ -1,5 +1,5 @@
 //
-//  FoldersAssembly.swift
+//  FoldersListAssembly.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 02.07.2020.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-class FoldersAssembly {
-    static func createFolders(appRouter: AppRouter) -> FoldersViewInput {
-        let router = FoldersRouter(router: appRouter)
-        let dataManager = FoldersDataManager()
-        let interactor = FoldersInteractor()
-        let presenter = FoldersPresenter(router: router, dataManager: dataManager)
-        let viewController = FoldersViewController()
+class FoldersListAssembly {
+    static func createFolders(appRouter: AppRouter) -> FoldersListViewInput {
+        let router = FoldersListRouter(router: appRouter)
+        let dataManager = FoldersListDataManager()
+        let interactor = FoldersListInteractor()
+        let presenter = FoldersListPresenter(router: router, dataManager: dataManager)
+        let viewController = FoldersListViewController()
         
         presenter.interactor = interactor
         presenter.view = viewController

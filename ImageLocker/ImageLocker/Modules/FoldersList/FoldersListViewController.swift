@@ -1,5 +1,5 @@
 //
-//  FoldersViewController.swift
+//  FoldersListViewController.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 02.07.2020.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol FoldersViewInput: TableEditable {
-    var presenter: FoldersViewOutput? { get set }
+protocol FoldersListViewInput: TableEditable {
+    var presenter: FoldersListViewOutput? { get set }
     var viewController: UIViewController { get }
     
 }
 
-class FoldersViewController: UIViewController, FoldersViewInput {
-    var presenter: FoldersViewOutput?
+class FoldersListViewController: UIViewController, FoldersListViewInput {
+    var presenter: FoldersListViewOutput?
     var viewController: UIViewController { return self }
     
     private enum LocalizedString {

@@ -1,5 +1,5 @@
 //
-//  FoldersInteractor.swift
+//  FoldersListInteractor.swift
 //  ImageLocker
 //
 //  Created by Виталий Субботин on 02.07.2020.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol FoldersInteractorInput: class {
-    var presenter: FoldersInteractorOutput? { get set }
+protocol FoldersListInteractorInput: class {
+    var presenter: FoldersListInteractorOutput? { get set }
     func createFolder(name: String)
 }
 
-protocol FoldersInteractorOutput: class {
-    func interactor(_ interactor: FoldersInteractorInput, didCreateFolder name: String)
+protocol FoldersListInteractorOutput: class {
+    func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String)
 }
 
-class FoldersInteractor: FoldersInteractorInput {
-    weak var presenter: FoldersInteractorOutput?
+class FoldersListInteractor: FoldersListInteractorInput {
+    weak var presenter: FoldersListInteractorOutput?
     private let fileManager = FileManager.default
     
     func createFolder(name: String) {
