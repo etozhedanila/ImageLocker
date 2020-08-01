@@ -16,6 +16,10 @@ class FolderRouter: RouterInterface {
         self.router = router
     }
     
+    func preview(photos: [PhotoCellModel], selectedPhotoIndex: Int) {
+        
+    }
+    
     func openPhotoLibrary(imagesPicked: @escaping ([PhotoCellModel]) -> Void) {
         let authorizationStatus = PHPhotoLibrary.authorizationStatus()
         if authorizationStatus == .authorized {

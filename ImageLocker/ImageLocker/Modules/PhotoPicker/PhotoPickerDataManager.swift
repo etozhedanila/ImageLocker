@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PhotoPickerDataManagerDelegate: class {
-    func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt indexPath: IndexPath)
+    func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt index: Int)
 }
 
 class PhotoPickerDataManager: BaseCollectionDataManager {
@@ -18,7 +18,7 @@ class PhotoPickerDataManager: BaseCollectionDataManager {
 
 extension PhotoPickerDataManager: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.dataManager(self, didSelectPhotoAt: indexPath)
+        delegate?.dataManager(self, didSelectPhotoAt: indexPath.row)
     }
 }
 

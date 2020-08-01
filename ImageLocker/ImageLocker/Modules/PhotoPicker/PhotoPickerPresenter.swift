@@ -38,6 +38,7 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
             .compactMap { ($0 as? PhotoCellConfigurator)?.model }
             .filter { $0.isSelected }
         resultHandler?(selectedPhotos)
+        router.close()
     }
     
     private func fetchPhotos() {
@@ -57,7 +58,7 @@ extension PhotoPickerPresenter: PhotoPickerInteractorOutput {
 }
 
 extension PhotoPickerPresenter: PhotoPickerDataManagerDelegate {
-    func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt indexPath: IndexPath) {
-        (dataManager.items[indexPath.row] as? PhotoCellConfigurator)?.model.isSelected.toggle()
+    func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt index: Int) {
+        (dataManager.items[index] as? PhotoCellConfigurator)?.model.isSelected.toggle()
     }
 }

@@ -14,4 +14,8 @@ class PhotoPickerRouter: RouterInterface {
     init(router: AppRouter) {
         self.router = router
     }
+    
+    func close() {
+        router.pop(animated: true)
+    }
 }
