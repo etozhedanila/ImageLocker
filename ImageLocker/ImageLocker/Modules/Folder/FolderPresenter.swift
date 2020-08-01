@@ -34,7 +34,9 @@ class FolderPresenter: FolderViewOutput {
     }
     
     func viewDidTapAddImage(_ view: FolderViewInput) {
-        router.openPhotoLibrary()
+        router.openPhotoLibrary() { _ in
+            
+        }
     }
 }
 

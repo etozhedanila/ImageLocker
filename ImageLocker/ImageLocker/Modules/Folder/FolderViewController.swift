@@ -31,7 +31,7 @@ class FolderViewController: UIViewController, FolderViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.rightBarButtonItem = addButton
         makeConstraints()
         presenter?.viewDidLoad(self)
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Photos
 
 class FolderRouter: RouterInterface {
     let router: AppRouter
@@ -15,7 +16,32 @@ class FolderRouter: RouterInterface {
         self.router = router
     }
     
-    func openPhotoLibrary() {
-        
+    func openPhotoLibrary(imagesPicked: @escaping ([PhotoCellModel]) -> Void) {
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
+        if authorizationStatus == .authorized {
+            presentPhotoLibrary(resultHandler: imagesPicked)
+        } else {
+            requestAuth() { [weak self] isSuccess in
+                guard let self = self, isSuccess else { return }
+                DispatchQueue.main.async {
+                    self.presentPhotoLibrary(resultHandler: imagesPicked)
+                }
+            }
+        }
+    }
+    
+    private func requestAuth(completion: ((Bool) -> Void)?) {
+        PHPhotoLibrary.requestAuthorization { (status) in
+            guard status == .authorized else {
+                completion?(false)
+                return
+            }
+            completion?(true)
+        }
+    }
+    
+    private func presentPhotoLibrary(resultHandler: @escaping ([PhotoCellModel]) -> Void) {
+        let viewController = PhotoPickerAssembly.createPhotoPicker(appRouter: router, resultHandler: resultHandler).viewController
+        router.push(viewController: viewController, animated: true)
     }
 }

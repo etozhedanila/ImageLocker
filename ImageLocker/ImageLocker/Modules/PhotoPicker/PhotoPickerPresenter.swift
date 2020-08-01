@@ -6,19 +6,23 @@
 //  Copyright © 2020 Виталий Субботин. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PhotoPickerViewOutput: class {
     var view: PhotoPickerViewInput? { get set }
     var dataManager: PhotoPickerDataManager { get }
     
     func viewDidLoad(_ view: PhotoPickerViewInput)
+    func viewDidEndPicking(_ view: PhotoPickerViewInput)
 }
 
 class PhotoPickerPresenter: PhotoPickerViewOutput {
     weak var view: PhotoPickerViewInput?
+    var interactor: PhotoPickerInteractorInput?
     var dataManager: PhotoPickerDataManager
+    var resultHandler: (([PhotoCellModel]) -> Void)?
     private let router: PhotoPickerRouter
+    private var selectedPhotos: [PhotoCellModel] = []
     
     init(dataManager: PhotoPickerDataManager, router: PhotoPickerRouter) {
         self.dataManager = dataManager
@@ -26,12 +30,34 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
     }
     
     func viewDidLoad(_ view: PhotoPickerViewInput) {
-        
+        fetchPhotos()
+    }
+    
+    func viewDidEndPicking(_ view: PhotoPickerViewInput) {
+        selectedPhotos = dataManager.items
+            .compactMap { ($0 as? PhotoCellConfigurator)?.model }
+            .filter { $0.isSelected }
+        resultHandler?(selectedPhotos)
+    }
+    
+    private func fetchPhotos() {
+        interactor?.fetchPhotos()
+    }
+}
+
+extension PhotoPickerPresenter: PhotoPickerInteractorOutput {
+    func interactor(_ interactor: PhotoPickerInteractorInput, didReceivePhotos photos: [UIImage]) {
+        let models = photos.map { PhotoCellModel(image: $0) }
+        let confs = models.map { PhotoCellConfigurator(model: $0) }
+        dataManager.items.append(contentsOf: confs)
+        DispatchQueue.main.async {
+            self.view?.reload()
+        }
     }
 }
 
 extension PhotoPickerPresenter: PhotoPickerDataManagerDelegate {
     func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt indexPath: IndexPath) {
-        
+        (dataManager.items[indexPath.row] as? PhotoCellConfigurator)?.model.isSelected.toggle()
     }
 }
