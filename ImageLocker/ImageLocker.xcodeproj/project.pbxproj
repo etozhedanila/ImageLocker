@@ -34,6 +34,13 @@
 		F69C18AC24AE80780007283D /* TableEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AB24AE80780007283D /* TableEditable.swift */; };
 		F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */; };
 		F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18B024AE8C620007283D /* CreateFolderAlert.swift */; };
+		F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */; };
+		F6A5DEF224D5C21800BF0911 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF124D5C21800BF0911 /* PhotosCell.swift */; };
+		F6A5DEF424D5C3F600BF0911 /* PhotoPickerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */; };
+		F6A5DEF724D5C49C00BF0911 /* BaseCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF624D5C49C00BF0911 /* BaseCollectionDataManager.swift */; };
+		F6A5DEF924D5EF9600BF0911 /* PhotoPickerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF824D5EF9600BF0911 /* PhotoPickerAssembly.swift */; };
+		F6A5DEFB24D5EFC700BF0911 /* PhotoPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */; };
+		F6A5DEFD24D5EFD800BF0911 /* PhotoPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEFC24D5EFD800BF0911 /* PhotoPickerPresenter.swift */; };
 		F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92D424CC832700B59CF0 /* FolderCell.swift */; };
 		F6CC930024CCA15B00B59CF0 /* FolderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */; };
 		F6CC930324CCA29300B59CF0 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930224CCA29300B59CF0 /* FolderViewController.swift */; };
@@ -74,6 +81,13 @@
 		F69C18AB24AE80780007283D /* TableEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEditable.swift; sourceTree = "<group>"; };
 		F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataManager.swift; sourceTree = "<group>"; };
 		F69C18B024AE8C620007283D /* CreateFolderAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderAlert.swift; sourceTree = "<group>"; };
+		F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		F6A5DEF124D5C21800BF0911 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerDataManager.swift; sourceTree = "<group>"; };
+		F6A5DEF624D5C49C00BF0911 /* BaseCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionDataManager.swift; sourceTree = "<group>"; };
+		F6A5DEF824D5EF9600BF0911 /* PhotoPickerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAssembly.swift; sourceTree = "<group>"; };
+		F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerRouter.swift; sourceTree = "<group>"; };
+		F6A5DEFC24D5EFD800BF0911 /* PhotoPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPresenter.swift; sourceTree = "<group>"; };
 		F6CC92D424CC832700B59CF0 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderAssembly.swift; sourceTree = "<group>"; };
 		F6CC930224CCA29300B59CF0 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F68B2F0F24AA566800623813 /* AppRouter.swift */,
+				F6A5DEF024D5C16B00BF0911 /* PhotoPicker */,
 				F69C18B224AE8C670007283D /* Alerts */,
 				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F68B2EEA24A9170800623813 /* CreatePincode */,
@@ -211,6 +226,7 @@
 			children = (
 				F69C18AB24AE80780007283D /* TableEditable.swift */,
 				F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */,
+				F6A5DEF624D5C49C00BF0911 /* BaseCollectionDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,6 +237,27 @@
 				F69C18B024AE8C620007283D /* CreateFolderAlert.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		F6A5DEF024D5C16B00BF0911 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F6A5DEF824D5EF9600BF0911 /* PhotoPickerAssembly.swift */,
+				F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */,
+				F6A5DEFC24D5EFD800BF0911 /* PhotoPickerPresenter.swift */,
+				F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */,
+				F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */,
+				F6A5DEF524D5C40A00BF0911 /* cell */,
+			);
+			path = PhotoPicker;
+			sourceTree = "<group>";
+		};
+		F6A5DEF524D5C40A00BF0911 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6A5DEF124D5C21800BF0911 /* PhotosCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		F6CC92D624CC832C00B59CF0 /* cell */ = {
@@ -362,22 +399,29 @@
 				F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */,
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
+				F6A5DEF924D5EF9600BF0911 /* PhotoPickerAssembly.swift in Sources */,
+				F6A5DEFD24D5EFD800BF0911 /* PhotoPickerPresenter.swift in Sources */,
 				F6CC930B24CCA2C100B59CF0 /* FolderInteractor.swift in Sources */,
 				F69C187A24AE74F10007283D /* FoldersListPresenter.swift in Sources */,
 				F6CC930024CCA15B00B59CF0 /* FolderAssembly.swift in Sources */,
+				F6A5DEFB24D5EFC700BF0911 /* PhotoPickerRouter.swift in Sources */,
 				F68B2EF524A91DAB00623813 /* PincodeView.swift in Sources */,
 				F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */,
 				F6CC930524CCA29E00B59CF0 /* FolderPresenter.swift in Sources */,
 				F6CC930924CCA2B500B59CF0 /* FolderDataManager.swift in Sources */,
 				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
+				F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */,
 				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
 				F6CC930324CCA29300B59CF0 /* FolderViewController.swift in Sources */,
 				F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */,
+				F6A5DEF224D5C21800BF0911 /* PhotosCell.swift in Sources */,
+				F6A5DEF424D5C3F600BF0911 /* PhotoPickerDataManager.swift in Sources */,
 				F69C187C24AE74F90007283D /* FoldersListRouter.swift in Sources */,
 				F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */,
 				F68B2F2624AA68B800623813 /* EnterPincodeAssembly.swift in Sources */,
 				F6CC930724CCA2AB00B59CF0 /* FolderRouter.swift in Sources */,
+				F6A5DEF724D5C49C00BF0911 /* BaseCollectionDataManager.swift in Sources */,
 				F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */,
 				F69C18AC24AE80780007283D /* TableEditable.swift in Sources */,
 				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,
