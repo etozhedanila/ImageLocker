@@ -50,6 +50,7 @@
 		F6CC930B24CCA2C100B59CF0 /* FolderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */; };
 		F6CCF4B824D60245003CA3F3 /* CollectionEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4B724D60245003CA3F3 /* CollectionEditable.swift */; };
 		F6CCF4BA24D602FB003CA3F3 /* PhotoPickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4B924D602FB003CA3F3 /* PhotoPickerInteractor.swift */; };
+		F6CCF4D024D695DD003CA3F3 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInteractor.swift; sourceTree = "<group>"; };
 		F6CCF4B724D60245003CA3F3 /* CollectionEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionEditable.swift; sourceTree = "<group>"; };
 		F6CCF4B924D602FB003CA3F3 /* PhotoPickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerInteractor.swift; sourceTree = "<group>"; };
+		F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F68B2EEA24A9170800623813 /* CreatePincode */,
 				F69C187824AE74E00007283D /* FoldersList */,
+				F6CCF4D124D695E9003CA3F3 /* PhotoPreview */,
 				F6CC930124CCA1B600B59CF0 /* Folder */,
 			);
 			path = Modules;
@@ -285,6 +288,14 @@
 				F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */,
 			);
 			path = Folder;
+			sourceTree = "<group>";
+		};
+		F6CCF4D124D695E9003CA3F3 /* PhotoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */,
+			);
+			path = PhotoPreview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +428,7 @@
 				F6CC930924CCA2B500B59CF0 /* FolderDataManager.swift in Sources */,
 				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
 				F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */,
+				F6CCF4D024D695DD003CA3F3 /* PhotoPreviewViewController.swift in Sources */,
 				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
 				F6CCF4B824D60245003CA3F3 /* CollectionEditable.swift in Sources */,
