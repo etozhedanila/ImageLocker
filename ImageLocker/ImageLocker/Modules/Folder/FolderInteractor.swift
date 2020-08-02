@@ -29,5 +29,6 @@ class FolderInteractor: FolderInteractorInput {
 
     func save(photos: [PhotoCellModel]) {
 
+        presenter?.interacor(self, didSavePhotos: photos)
     }
 }

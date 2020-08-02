@@ -17,7 +17,9 @@ class FolderRouter: RouterInterface {
     }
 
     func preview(photos: [PhotoCellModel], selectedPhotoIndex: Int) {
-
+        let viewController = PhotoPreviewAssembly.createPhotoPreview(appRouter: router, selectedPhotoIndex: selectedPhotoIndex, photos: photos).viewController
+        viewController.modalPresentationStyle = .overFullScreen
+        router.present(viewController: viewController, animated: true)
     }
 
     func openPhotoLibrary(imagesPicked: @escaping ([PhotoCellModel]) -> Void) {

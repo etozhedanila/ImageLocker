@@ -51,6 +51,10 @@
 		F6CCF4B824D60245003CA3F3 /* CollectionEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4B724D60245003CA3F3 /* CollectionEditable.swift */; };
 		F6CCF4BA24D602FB003CA3F3 /* PhotoPickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4B924D602FB003CA3F3 /* PhotoPickerInteractor.swift */; };
 		F6CCF4D024D695DD003CA3F3 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */; };
+		F6CCF4D324D6997C003CA3F3 /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4D224D6997C003CA3F3 /* ImagePreviewCell.swift */; };
+		F6CCF4D524D6A718003CA3F3 /* PhotoPreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4D424D6A718003CA3F3 /* PhotoPreviewPresenter.swift */; };
+		F6CCF4D724D6A74B003CA3F3 /* PhotoPreviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4D624D6A74B003CA3F3 /* PhotoPreviewDataManager.swift */; };
+		F6CCF4D924D6A92E003CA3F3 /* PhotoPreviewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CCF4D824D6A92E003CA3F3 /* PhotoPreviewAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +105,10 @@
 		F6CCF4B724D60245003CA3F3 /* CollectionEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionEditable.swift; sourceTree = "<group>"; };
 		F6CCF4B924D602FB003CA3F3 /* PhotoPickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerInteractor.swift; sourceTree = "<group>"; };
 		F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
+		F6CCF4D224D6997C003CA3F3 /* ImagePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
+		F6CCF4D424D6A718003CA3F3 /* PhotoPreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewPresenter.swift; sourceTree = "<group>"; };
+		F6CCF4D624D6A74B003CA3F3 /* PhotoPreviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewDataManager.swift; sourceTree = "<group>"; };
+		F6CCF4D824D6A92E003CA3F3 /* PhotoPreviewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewAssembly.swift; sourceTree = "<group>"; };
 		FCE4D65683DFF28E85495B92 /* Pods-ImageLocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.debug.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,9 +301,21 @@
 		F6CCF4D124D695E9003CA3F3 /* PhotoPreview */ = {
 			isa = PBXGroup;
 			children = (
+				F6CCF4D824D6A92E003CA3F3 /* PhotoPreviewAssembly.swift */,
 				F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */,
+				F6CCF4D424D6A718003CA3F3 /* PhotoPreviewPresenter.swift */,
+				F6CCF4D624D6A74B003CA3F3 /* PhotoPreviewDataManager.swift */,
+				F6CCF4DA24D6A936003CA3F3 /* cell */,
 			);
 			path = PhotoPreview;
+			sourceTree = "<group>";
+		};
+		F6CCF4DA24D6A936003CA3F3 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6CCF4D224D6997C003CA3F3 /* ImagePreviewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +437,7 @@
 				F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */,
 				F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */,
 				F6A5DEF924D5EF9600BF0911 /* PhotoPickerAssembly.swift in Sources */,
+				F6CCF4D724D6A74B003CA3F3 /* PhotoPreviewDataManager.swift in Sources */,
 				F6A5DEFD24D5EFD800BF0911 /* PhotoPickerPresenter.swift in Sources */,
 				F6CC930B24CCA2C100B59CF0 /* FolderInteractor.swift in Sources */,
 				F69C187A24AE74F10007283D /* FoldersListPresenter.swift in Sources */,
@@ -430,9 +451,11 @@
 				F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */,
 				F6CCF4D024D695DD003CA3F3 /* PhotoPreviewViewController.swift in Sources */,
 				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
+				F6CCF4D324D6997C003CA3F3 /* ImagePreviewCell.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,
 				F6CCF4B824D60245003CA3F3 /* CollectionEditable.swift in Sources */,
 				F6CC930324CCA29300B59CF0 /* FolderViewController.swift in Sources */,
+				F6CCF4D524D6A718003CA3F3 /* PhotoPreviewPresenter.swift in Sources */,
 				F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */,
 				F6A5DEF224D5C21800BF0911 /* PhotoCell.swift in Sources */,
 				F6A5DEF424D5C3F600BF0911 /* PhotoPickerDataManager.swift in Sources */,
@@ -451,6 +474,7 @@
 				F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */,
 				F69C187E24AE75090007283D /* FoldersListDataManager.swift in Sources */,
 				F69C188224AE751E0007283D /* FoldersListInteractor.swift in Sources */,
+				F6CCF4D924D6A92E003CA3F3 /* PhotoPreviewAssembly.swift in Sources */,
 				F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */,
 				F69C187724AE74DB0007283D /* FoldersListAssembly.swift in Sources */,
 			);
