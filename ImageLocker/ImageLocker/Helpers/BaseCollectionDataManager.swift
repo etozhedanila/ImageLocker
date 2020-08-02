@@ -21,18 +21,18 @@ protocol CollectionConfigurator {
 }
 
 class CollectionCellConfigurator<CellType: CollectionConfigurable, CellModel>: CollectionConfigurator where CellType.CellModel == CellModel {
-    
+
     static var reuseId: String { return String(describing: CellType.self) }
     var model: CellModel
     var height: CGFloat
     var width: CGFloat
-    
+
     init(model: CellModel, size: CGSize) {
         self.model = model
         self.height = size.height
         self.width = size.width
     }
-    
+
     func configure(cell: UICollectionViewCell) {
         (cell as? CellType)?.configure(model: model)
     }
@@ -40,11 +40,11 @@ class CollectionCellConfigurator<CellType: CollectionConfigurable, CellModel>: C
 
 class BaseCollectionDataManager: NSObject, UICollectionViewDataSource {
     var items: [CollectionConfigurator] = []
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: type(of: item).reuseId, for: indexPath)

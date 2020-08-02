@@ -10,11 +10,11 @@ import Foundation
 
 class PhotoPickerRouter: RouterInterface {
     let router: AppRouter
-    
+
     init(router: AppRouter) {
         self.router = router
     }
-    
+
     func close() {
         router.pop(animated: true)
     }

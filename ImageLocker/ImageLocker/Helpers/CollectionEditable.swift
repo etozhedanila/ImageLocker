@@ -16,6 +16,5 @@ extension CollectionEditable {
     func reload() {
         collectionView.reloadData()
     }
-    
-    
+
 }

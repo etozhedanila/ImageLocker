@@ -13,7 +13,7 @@ class CreatePinAssembly {
     init(pincode: String = "") {
         self.pincode = pincode
     }
-    
+
     func createPin(appRouter: AppRouter) -> CreatePinViewInput {
         let router = CreatePinRouter(router: appRouter)
         let presenter = CreatePinPresenter(router: router)

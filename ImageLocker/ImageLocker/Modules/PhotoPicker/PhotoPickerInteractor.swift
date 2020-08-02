@@ -11,7 +11,7 @@ import Photos
 
 protocol PhotoPickerInteractorInput: class {
     var presenter: PhotoPickerInteractorOutput? { get set }
-    
+
     func fetchPhotos()
 }
 
@@ -21,17 +21,17 @@ protocol PhotoPickerInteractorOutput: class {
 
 class PhotoPickerInteractor: PhotoPickerInteractorInput {
     weak var presenter: PhotoPickerInteractorOutput?
-    
+
     func fetchPhotos() {
         let imageManager = PHImageManager.default()
-        
+
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = true
         requestOptions.deliveryMode = .highQualityFormat
-        
+
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        
+
         let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         var images: [UIImage] = []
         fetchResult.objects(at: .init(integersIn: 0..<fetchResult.count)).forEach {

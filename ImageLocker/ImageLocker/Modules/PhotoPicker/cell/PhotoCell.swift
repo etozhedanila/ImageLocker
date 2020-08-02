@@ -24,39 +24,39 @@ class PhotoCellConfigurator: CollectionCellConfigurator<PhotoCell, PhotoCellMode
 class PhotoCell: UICollectionViewCell {
     private let photoView: UIImageView = {
         let imageView = UIImageView()
-        
+
         return imageView
     }()
-    
+
     private let overlayView: UIView = {
         let view = UIView()
         view.isHidden = true
         view.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
         return view
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(photoView)
         contentView.addSubview(overlayView)
         makeConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override var isSelected: Bool {
         didSet {
             overlayView.isHidden.toggle()
         }
     }
-    
+
     private func makeConstraints() {
         photoView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         overlayView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

@@ -15,13 +15,13 @@ class FoldersListAssembly {
         let interactor = FoldersListInteractor()
         let presenter = FoldersListPresenter(router: router, dataManager: dataManager)
         let viewController = FoldersListViewController()
-        
+
         presenter.interactor = interactor
         presenter.view = viewController
         interactor.presenter = presenter
         viewController.presenter = presenter
         dataManager.delegate = presenter
-        
+
         return viewController
     }
 }

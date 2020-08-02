@@ -11,7 +11,7 @@ import UIKit
 protocol PhotoPickerViewOutput: class {
     var view: PhotoPickerViewInput? { get set }
     var dataManager: PhotoPickerDataManager { get }
-    
+
     func viewDidLoad(_ view: PhotoPickerViewInput)
     func viewDidEndPicking(_ view: PhotoPickerViewInput)
 }
@@ -23,16 +23,16 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
     var resultHandler: (([PhotoCellModel]) -> Void)?
     private let router: PhotoPickerRouter
     private var selectedPhotos: [PhotoCellModel] = []
-    
+
     init(dataManager: PhotoPickerDataManager, router: PhotoPickerRouter) {
         self.dataManager = dataManager
         self.router = router
     }
-    
+
     func viewDidLoad(_ view: PhotoPickerViewInput) {
         fetchPhotos()
     }
-    
+
     func viewDidEndPicking(_ view: PhotoPickerViewInput) {
         selectedPhotos = dataManager.items
             .compactMap { ($0 as? PhotoCellConfigurator)?.model }
@@ -40,7 +40,7 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
         resultHandler?(selectedPhotos)
         router.close()
     }
-    
+
     private func fetchPhotos() {
         interactor?.fetchPhotos()
     }

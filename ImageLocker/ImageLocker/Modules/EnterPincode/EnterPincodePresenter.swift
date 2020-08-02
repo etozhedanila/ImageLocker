@@ -19,16 +19,16 @@ class EnterPincodePresenter: EnterPincodeViewOutput {
     let router: EnterPincodeRouter
     let pincode: String
     var interactor: EnterPincodeInteractorInput?
-    
+
     init(router: EnterPincodeRouter, pincode: String) {
         self.router = router
         self.pincode = pincode
     }
-    
+
     func viewDidLoad(_ view: EnterPincodeViewInput) {
-        
+
     }
-    
+
     func viewDidPassAuth(_ view: EnterPincodeViewInput) {
         router.showFolders()
     }

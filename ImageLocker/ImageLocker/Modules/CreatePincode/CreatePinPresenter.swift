@@ -14,7 +14,7 @@ import Foundation
 
 protocol CreatePinViewOutput: class {
     var view: CreatePinViewInput? { get set }
-    
+
     func viewDidLoad(_ view: CreatePinViewInput)
 }
 
@@ -23,11 +23,11 @@ class CreatePinPresenter: CreatePinViewOutput {
     var interactor: CreatePinInteractorInput?
     let router: CreatePinRouter
     var pincode = ""
-    
+
     init(router: CreatePinRouter) {
         self.router = router
     }
-    
+
     func viewDidLoad(_ view: CreatePinViewInput) {
         if !pincode.isEmpty {
             view.setupAsConfirm()

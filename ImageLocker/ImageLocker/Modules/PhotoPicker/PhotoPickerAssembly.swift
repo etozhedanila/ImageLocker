@@ -15,7 +15,7 @@ class PhotoPickerAssembly {
         let presenter = PhotoPickerPresenter(dataManager: dataManager, router: router)
         let interactor = PhotoPickerInteractor()
         let viewController = PhotoPickerViewController()
-        
+
         interactor.presenter = presenter
         presenter.interactor = interactor
         presenter.view = viewController

@@ -13,7 +13,7 @@ class EnterPincodeAssembly {
     init(pincode: String) {
         self.pincode = pincode
     }
-    
+
     func enterPincode(appRouter: AppRouter) -> EnterPincodeViewInput {
         let router = EnterPincodeRouter(router: appRouter)
         let interactor = EnterPincodeInteractor()

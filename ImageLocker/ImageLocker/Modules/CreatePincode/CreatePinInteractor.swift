@@ -10,7 +10,7 @@ import Foundation
 
 protocol CreatePinInteractorInput: class {
     var presenter: CreatePinInteractorOutput? { get set }
-    
+
     func save(pincode: String)
 }
 
@@ -20,7 +20,7 @@ protocol CreatePinInteractorOutput: class {
 
 class CreatePinInteractor: CreatePinInteractorInput {
     weak var presenter: CreatePinInteractorOutput?
-    
+
     func save(pincode: String) {
         let ud = UserDefaults.standard
         ud.set(pincode, forKey: pincodeKey)

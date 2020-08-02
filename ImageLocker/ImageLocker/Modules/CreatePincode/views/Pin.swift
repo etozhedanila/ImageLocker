@@ -14,13 +14,13 @@ class Pin: UIView {
         emptyPin.pin.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         return emptyPin
     }
-    
+
     static var filledPin: Pin {
         let filledPin = Pin()
         filledPin.pin.backgroundColor = .green
         return filledPin
     }
-    
+
     let pin: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -28,17 +28,17 @@ class Pin: UIView {
         view.layer.masksToBounds = true
         return view
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(pin)
         makeConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func makeConstraints() {
         pin.snp.makeConstraints { make in
             make.width.height.equalTo(20)
@@ -46,4 +46,3 @@ class Pin: UIView {
         }
     }
 }
-

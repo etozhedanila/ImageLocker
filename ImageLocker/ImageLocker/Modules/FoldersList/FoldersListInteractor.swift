@@ -10,7 +10,7 @@ import Foundation
 
 protocol FoldersListInteractorInput: class {
     var presenter: FoldersListInteractorOutput? { get set }
-    
+
     func loadFolders()
     func createFolder(name: String)
     func remove(folder: FolderModel)
@@ -25,15 +25,15 @@ protocol FoldersListInteractorOutput: class {
 class FoldersListInteractor: FoldersListInteractorInput {
     weak var presenter: FoldersListInteractorOutput?
     private let fileManager = FileManager.default
-    
+
     func loadFolders() {
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        
+
         let documentsPath = documents.path
         let directories = try? fileManager.contentsOfDirectory(atPath: documentsPath)
         presenter?.interactor(self, didLoadDirectories: directories ?? [])
     }
-    
+
     func createFolder(name: String) {
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
@@ -46,13 +46,13 @@ class FoldersListInteractor: FoldersListInteractorInput {
             print("Couldn't create document directory")
         }
     }
-    
+
     func remove(folder: FolderModel) {
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
         let filePath =  documents.appendingPathComponent("\(folder.name)").path
         guard fileManager.fileExists(atPath: filePath) else { return }
-        
+
         do {
             try fileManager.removeItem(atPath: filePath)
             presenter?.interactor(self, didRemoveDirectory: folder)

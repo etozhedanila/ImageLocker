@@ -10,7 +10,7 @@ import Foundation
 
 protocol EnterPincodeInteractorInput: class {
     var presenter: EnterPincodeInteractorOutput? { get set }
-    
+
     func check(pincode: String)
 }
 
@@ -20,7 +20,7 @@ protocol EnterPincodeInteractorOutput: class {
 
 class EnterPincodeInteractor: EnterPincodeInteractorInput {
     weak var presenter: EnterPincodeInteractorOutput?
-    
+
     func check(pincode: String) {
         let ud = UserDefaults.standard
         guard let savedPincode = ud.string(forKey: pincodeKey) else { return }
