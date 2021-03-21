@@ -10,6 +10,16 @@ import UIKit
 
 struct PhotoCellModel {
     
+    init(image: UIImage?, isSelected: Bool = false) {
+        self.image = image
+        self.isSelected = isSelected
+    }
+    
+    init(url: URL) {
+        print(url.path)
+        image = UIImage(contentsOfFile: url.path)
+    }
+    
     var image: UIImage?
     var isSelected: Bool = false
 }

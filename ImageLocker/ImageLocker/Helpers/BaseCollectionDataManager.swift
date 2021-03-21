@@ -9,11 +9,13 @@
 import UIKit
 
 protocol CollectionConfigurable where Self: UICollectionViewCell {
+    
     associatedtype CellModel
     func configure(model: CellModel)
 }
 
 protocol CollectionConfigurator {
+    
     static var reuseId: String { get }
     var height: CGFloat { get set }
     var width: CGFloat { get set }
@@ -39,6 +41,7 @@ class CollectionCellConfigurator<CellType: CollectionConfigurable, CellModel>: C
 }
 
 class BaseCollectionDataManager: NSObject, UICollectionViewDataSource {
+    
     var items: [CollectionConfigurator] = []
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

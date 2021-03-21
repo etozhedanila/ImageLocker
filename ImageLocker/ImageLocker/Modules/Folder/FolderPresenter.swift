@@ -34,12 +34,13 @@ class FolderPresenter: FolderViewOutput {
 
     func viewDidLoad(_ view: FolderViewInput) {
         view.configure(title: folder.name)
-        interactor?.fetchPhotos()
+        interactor?.fetchPhotos(folder: folder)
     }
 
     func viewDidTapAddImage(_ view: FolderViewInput) {
         router.openPhotoLibrary { [weak self] photos in
-            self?.interactor?.save(photos: photos)
+            guard let self = self else { return }
+            self.interactor?.save(folder: self.folder, photos: photos)
         }
     }
 }

@@ -41,7 +41,8 @@ class FoldersListInteractor: FoldersListInteractorInput {
     func createFolder(name: String) {
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
-        let filePath =  documents.appendingPathComponent("\(name)").path
+        let filePath = documents.appendingPathComponent("\(name)").path
+        //TODO: Handle if exist
         if fileManager.fileExists(atPath: filePath) { return }
         do {
             try fileManager.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)

@@ -9,11 +9,13 @@
 import UIKit
 
 protocol ConfigurableCell where Self: UITableViewCell {
+    
     associatedtype CellModel
     func configure(model: CellModel)
 }
 
 protocol CellConfigurator {
+    
     static var reuseId: String { get }
     var height: CGFloat { get set }
     func configure(cell: UITableViewCell)
@@ -36,6 +38,7 @@ class TableCellConfigurator<CellType: ConfigurableCell, CellModel>: CellConfigur
 }
 
 class BaseTableDataManager: NSObject, UITableViewDataSource {
+    
     var items: [CellConfigurator] = []
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

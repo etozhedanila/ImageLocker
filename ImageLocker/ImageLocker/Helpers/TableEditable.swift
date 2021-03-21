@@ -9,21 +9,25 @@
 import UIKit
 
 struct TableEdition {
+    
     var position: Int
     var editionType: EditionType
 }
 
 enum EditionType {
+    
     case insert
     case remove
     case update
 }
 
 protocol TableEditable: class {
+    
     var tableView: UITableView { get }
 }
 
 extension TableEditable {
+    
     func reload() {
         tableView.reloadData()
     }
