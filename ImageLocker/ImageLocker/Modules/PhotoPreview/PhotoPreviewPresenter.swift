@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PhotoPreviewViewOutput: class {
+    
     var view: PhotoPreviewViewInput? { get set }
     var dataManager: PhotoPreviewDataManager { get }
     var selectedPhotoIndex: Int { get set }
@@ -18,6 +19,7 @@ protocol PhotoPreviewViewOutput: class {
 }
 
 class PhotoPreviewPresenter: PhotoPreviewViewOutput {
+    
     weak var view: PhotoPreviewViewInput?
     var dataManager: PhotoPreviewDataManager
     var selectedPhotoIndex: Int = 0

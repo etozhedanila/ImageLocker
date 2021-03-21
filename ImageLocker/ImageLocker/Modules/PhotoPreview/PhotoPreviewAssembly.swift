@@ -9,7 +9,11 @@
 import Foundation
 
 class PhotoPreviewAssembly {
-    static func createPhotoPreview(appRouter: AppRouter, selectedPhotoIndex: Int, photos: [PhotoCellModel]) -> PhotoPreviewViewInput {
+    
+    static func createPhotoPreview(
+        appRouter: AppRouter,
+        selectedPhotoIndex: Int,
+        photos: [PhotoCellModel]) -> PhotoPreviewViewInput {
         let dataManager = PhotoPreviewDataManager()
         let presenter = PhotoPreviewPresenter(dataManager: dataManager, photos: photos)
         let viewController = PhotoPreviewViewController()

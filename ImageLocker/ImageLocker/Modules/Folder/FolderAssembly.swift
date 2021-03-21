@@ -9,6 +9,7 @@
 import Foundation
 
 class FolderAssembly {
+    
     private let folder: FolderModel
 
     init(folder: FolderModel) {

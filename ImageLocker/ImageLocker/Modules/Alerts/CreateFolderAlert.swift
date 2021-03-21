@@ -9,6 +9,7 @@
 import UIKit
 
 class CreateFolderAlert: UIViewController {
+    
     var alertTitle = ""
     var alertMessage = ""
     var resultHandler: ((String) -> Void)?

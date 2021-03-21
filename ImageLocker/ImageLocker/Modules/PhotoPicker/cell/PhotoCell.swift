@@ -9,11 +9,13 @@
 import UIKit
 
 struct PhotoCellModel {
+    
     var image: UIImage?
     var isSelected: Bool = false
 }
 
 class PhotoCellConfigurator: CollectionCellConfigurator<PhotoCell, PhotoCellModel> {
+    
     init(model: PhotoCellModel) {
         let width = UIScreen.main.bounds.width / 4
         let size = CGSize(width: width, height: width)
@@ -22,11 +24,8 @@ class PhotoCellConfigurator: CollectionCellConfigurator<PhotoCell, PhotoCellMode
 }
 
 class PhotoCell: UICollectionViewCell {
-    private let photoView: UIImageView = {
-        let imageView = UIImageView()
-
-        return imageView
-    }()
+    
+    private let photoView = UIImageView()
 
     private let overlayView: UIView = {
         let view = UIView()
@@ -64,6 +63,7 @@ class PhotoCell: UICollectionViewCell {
 }
 
 extension PhotoCell: CollectionConfigurable {
+    
     func configure(model: PhotoCellModel) {
         self.photoView.image = model.image
         self.overlayView.isHidden = !isSelected

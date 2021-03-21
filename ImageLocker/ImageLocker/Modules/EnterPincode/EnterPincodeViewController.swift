@@ -10,12 +10,14 @@ import UIKit
 import LocalAuthentication
 
 protocol EnterPincodeViewInput: class {
+    
     var viewController: UIViewController { get }
     var presenter: EnterPincodeViewOutput? { get set }
     func reset()
 }
 
 class EnterPincodeViewController: UIViewController, EnterPincodeViewInput {
+    
     var viewController: UIViewController { return self }
     var presenter: EnterPincodeViewOutput?
 

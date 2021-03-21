@@ -9,6 +9,7 @@
 import UIKit
 
 protocol PhotoPickerViewInput: class, CollectionEditable {
+    
     var viewController: UIViewController { get }
     var presenter: PhotoPickerViewOutput? { get set }
 
@@ -16,6 +17,7 @@ protocol PhotoPickerViewInput: class, CollectionEditable {
 }
 
 class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
+    
     var viewController: UIViewController { return self }
     var presenter: PhotoPickerViewOutput?
 

@@ -9,16 +9,20 @@
 import UIKit
 
 protocol PincodeViewDelegate: class {
+    
     func pincodeView(_ pincodeView: PincodeView, didFinishEnterPincode pincode: String)
 }
 
 class PincodeView: UIView, UITextInputTraits {
+    
     weak var delegate: PincodeViewDelegate?
+    
     var pincode = "" {
         didSet {
             didChangePincode()
         }
     }
+    
     private let maxLength = 6
 
     private let stackView: UIStackView = {
@@ -26,7 +30,6 @@ class PincodeView: UIView, UITextInputTraits {
         stackView.backgroundColor = .white
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-
         return stackView
     }()
 
@@ -76,6 +79,7 @@ class PincodeView: UIView, UITextInputTraits {
 }
 
 extension PincodeView: UIKeyInput {
+    
     var hasText: Bool {
         return !pincode.isEmpty
     }
@@ -83,7 +87,6 @@ extension PincodeView: UIKeyInput {
     func insertText(_ text: String) {
         if pincode.count == maxLength { return }
         pincode.append(contentsOf: text)
-
     }
 
     func deleteBackward() {
@@ -94,6 +97,7 @@ extension PincodeView: UIKeyInput {
 }
 
 fileprivate extension UIStackView {
+    
     func removeAllArrangedSubviews() {
         let subviews = arrangedSubviews.reduce([]) { (allSubviews, subview) -> [UIView] in
             self.removeArrangedSubview(subview)

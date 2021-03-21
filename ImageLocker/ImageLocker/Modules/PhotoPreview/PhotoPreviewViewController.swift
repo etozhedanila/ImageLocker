@@ -9,11 +9,13 @@
 import UIKit
 
 protocol PhotoPreviewViewInput: class, CollectionEditable {
+    
     var viewController: UIViewController { get }
     var presenter: PhotoPreviewViewOutput? { get set }
 }
 
 class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
+    
     var viewController: UIViewController { return self }
     var presenter: PhotoPreviewViewOutput?
     

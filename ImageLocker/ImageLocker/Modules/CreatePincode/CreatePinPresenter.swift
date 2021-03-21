@@ -8,17 +8,15 @@
 
 import Foundation
 
-//TODO: ADD Touch ID/ FACE ID
-//      ADD Saving pincode
-//      ADD Enter pincode screen
-
 protocol CreatePinViewOutput: class {
+    
     var view: CreatePinViewInput? { get set }
 
     func viewDidLoad(_ view: CreatePinViewInput)
 }
 
 class CreatePinPresenter: CreatePinViewOutput {
+    
     weak var view: CreatePinViewInput?
     var interactor: CreatePinInteractorInput?
     let router: CreatePinRouter
@@ -36,12 +34,14 @@ class CreatePinPresenter: CreatePinViewOutput {
 }
 
 extension CreatePinPresenter: CreatePinInteractorOutput {
+    
     func interactorDidSavePincode(_ interactor: CreatePinInteractorInput) {
-        print("saved")
+        router.showFolderList()
     }
 }
 
 extension CreatePinPresenter: PincodeViewDelegate {
+    
     func pincodeView(_ pincodeView: PincodeView, didFinishEnterPincode pincode: String) {
         if self.pincode.isEmpty {
             router.showConfirmPincode(pincode: pincode)

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol PhotoPickerViewOutput: class {
+    
     var view: PhotoPickerViewInput? { get set }
     var dataManager: PhotoPickerDataManager { get }
 
@@ -17,6 +18,7 @@ protocol PhotoPickerViewOutput: class {
 }
 
 class PhotoPickerPresenter: PhotoPickerViewOutput {
+    
     weak var view: PhotoPickerViewInput?
     var interactor: PhotoPickerInteractorInput?
     var dataManager: PhotoPickerDataManager
@@ -47,6 +49,7 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
 }
 
 extension PhotoPickerPresenter: PhotoPickerInteractorOutput {
+    
     func interactor(_ interactor: PhotoPickerInteractorInput, didReceivePhotos photos: [UIImage]) {
         let models = photos.map { PhotoCellModel(image: $0) }
         let confs = models.map { PhotoCellConfigurator(model: $0) }
@@ -58,6 +61,7 @@ extension PhotoPickerPresenter: PhotoPickerInteractorOutput {
 }
 
 extension PhotoPickerPresenter: PhotoPickerDataManagerDelegate {
+    
     func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt index: Int) {
         (dataManager.items[index] as? PhotoCellConfigurator)?.model.isSelected.toggle()
     }

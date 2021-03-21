@@ -190,13 +190,13 @@
 			isa = PBXGroup;
 			children = (
 				F68B2F0F24AA566800623813 /* AppRouter.swift */,
-				F6A5DEF024D5C16B00BF0911 /* PhotoPicker */,
 				F69C18B224AE8C670007283D /* Alerts */,
-				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F68B2EEA24A9170800623813 /* CreatePincode */,
-				F69C187824AE74E00007283D /* FoldersList */,
-				F6CCF4D124D695E9003CA3F3 /* PhotoPreview */,
+				F68B2F2724AA68CE00623813 /* EnterPincode */,
 				F6CC930124CCA1B600B59CF0 /* Folder */,
+				F69C187824AE74E00007283D /* FoldersList */,
+				F6A5DEF024D5C16B00BF0911 /* PhotoPicker */,
+				F6CCF4D124D695E9003CA3F3 /* PhotoPreview */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -616,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PAJM5Y54LW;
 				INFOPLIST_FILE = ImageLocker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,6 +636,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PAJM5Y54LW;
 				INFOPLIST_FILE = ImageLocker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,6 +9,7 @@
 import UIKit
 
 class Pin: UIView {
+    
     static var emptyPin: Pin {
         let emptyPin = Pin()
         emptyPin.pin.backgroundColor = UIColor.black.withAlphaComponent(0.4)

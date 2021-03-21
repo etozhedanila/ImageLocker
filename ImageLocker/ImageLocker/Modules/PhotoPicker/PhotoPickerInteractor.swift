@@ -10,16 +10,19 @@ import UIKit
 import Photos
 
 protocol PhotoPickerInteractorInput: class {
+    
     var presenter: PhotoPickerInteractorOutput? { get set }
 
     func fetchPhotos()
 }
 
 protocol PhotoPickerInteractorOutput: class {
+    
     func interactor(_ interactor: PhotoPickerInteractorInput, didReceivePhotos photos: [UIImage])
 }
 
 class PhotoPickerInteractor: PhotoPickerInteractorInput {
+    
     weak var presenter: PhotoPickerInteractorOutput?
 
     func fetchPhotos() {

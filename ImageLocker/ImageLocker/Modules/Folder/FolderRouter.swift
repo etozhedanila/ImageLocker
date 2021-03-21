@@ -10,6 +10,7 @@ import Foundation
 import Photos
 
 class FolderRouter: RouterInterface {
+    
     let router: AppRouter
 
     init(router: AppRouter) {

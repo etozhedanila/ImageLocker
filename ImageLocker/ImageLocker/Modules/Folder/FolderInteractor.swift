@@ -9,6 +9,7 @@
 import Foundation
 
 protocol FolderInteractorInput: class {
+    
     var presenter: FolderInteractorOutput? { get set }
 
     func fetchPhotos()
@@ -16,11 +17,13 @@ protocol FolderInteractorInput: class {
 }
 
 protocol FolderInteractorOutput: class {
+    
     func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [PhotoCellModel])
     func interacor(_ interactor: FolderInteractorInput, didSavePhotos photos: [PhotoCellModel])
 }
 
 class FolderInteractor: FolderInteractorInput {
+    
     weak var presenter: FolderInteractorOutput?
 
     func fetchPhotos() {
@@ -28,7 +31,7 @@ class FolderInteractor: FolderInteractorInput {
     }
 
     func save(photos: [PhotoCellModel]) {
-
+        //TODO: Save photo
         presenter?.interacor(self, didSavePhotos: photos)
     }
 }

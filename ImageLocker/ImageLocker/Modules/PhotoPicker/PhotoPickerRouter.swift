@@ -9,6 +9,7 @@
 import Foundation
 
 class PhotoPickerRouter: RouterInterface {
+    
     let router: AppRouter
 
     init(router: AppRouter) {

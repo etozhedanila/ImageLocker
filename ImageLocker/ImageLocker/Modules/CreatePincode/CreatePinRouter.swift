@@ -9,6 +9,7 @@
 import Foundation
 
 class CreatePinRouter: RouterInterface, RouteFolders {
+    
     var router: AppRouter
 
     init(router: AppRouter) {

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol FolderViewOutput: class {
+    
     var view: FolderViewInput? { get set }
     var dataManager: FolderDataManager { get }
 
@@ -17,6 +18,7 @@ protocol FolderViewOutput: class {
 }
 
 class FolderPresenter: FolderViewOutput {
+    
     var dataManager: FolderDataManager
     weak var view: FolderViewInput?
     let router: FolderRouter

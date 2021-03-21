@@ -9,7 +9,9 @@
 import Foundation
 
 class FoldersListAssembly {
+    
     static func createFolders(appRouter: AppRouter) -> FoldersListViewInput {
+        
         let router = FoldersListRouter(router: appRouter)
         let dataManager = FoldersListDataManager()
         let interactor = FoldersListInteractor()

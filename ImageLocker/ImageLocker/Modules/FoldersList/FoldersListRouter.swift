@@ -9,6 +9,7 @@
 import Foundation
 
 class FoldersListRouter: RouterInterface {
+    
     let router: AppRouter
 
     private enum LocalizedString {

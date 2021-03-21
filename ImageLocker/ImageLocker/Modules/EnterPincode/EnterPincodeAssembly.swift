@@ -9,7 +9,9 @@
 import Foundation
 
 class EnterPincodeAssembly {
+    
     private let pincode: String
+    
     init(pincode: String) {
         self.pincode = pincode
     }

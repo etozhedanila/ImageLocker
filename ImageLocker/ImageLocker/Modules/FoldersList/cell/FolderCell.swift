@@ -9,16 +9,19 @@
 import UIKit
 
 struct FolderModel {
+    
     var name: String
 }
 
 class FolderCellConfigurator: TableCellConfigurator<FolderCell, FolderModel> {
+    
     init(model: FolderModel) {
         super.init(model: model, height: 100)
     }
 }
 
 class FolderCell: UITableViewCell {
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .medium)
@@ -57,14 +60,10 @@ class FolderCell: UITableViewCell {
             make.trailing.equalToSuperview().inset(20)
         }
     }
-
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-
-    }
 }
 
 extension FolderCell: ConfigurableCell {
+    
     func configure(model: FolderModel) {
         nameLabel.text = model.name
     }

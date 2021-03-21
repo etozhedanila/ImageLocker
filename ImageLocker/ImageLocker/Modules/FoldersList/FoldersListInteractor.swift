@@ -9,6 +9,7 @@
 import Foundation
 
 protocol FoldersListInteractorInput: class {
+    
     var presenter: FoldersListInteractorOutput? { get set }
 
     func loadFolders()
@@ -17,16 +18,19 @@ protocol FoldersListInteractorInput: class {
 }
 
 protocol FoldersListInteractorOutput: class {
+    
     func interactor(_ interactor: FoldersListInteractorInput, didLoadDirectories directories: [String])
     func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String)
     func interactor(_ interactor: FoldersListInteractorInput, didRemoveDirectory directory: FolderModel)
 }
 
 class FoldersListInteractor: FoldersListInteractorInput {
+    
     weak var presenter: FoldersListInteractorOutput?
     private let fileManager = FileManager.default
 
     func loadFolders() {
+        
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
         let documentsPath = documents.path

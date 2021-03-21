@@ -9,12 +9,14 @@
 import UIKit
 
 protocol RouterInterface {
+    
     var router: AppRouter { get }
 }
 
 protocol RouteFolders where Self: RouterInterface { }
 
 extension RouteFolders {
+    
     func showFolders() {
         let vc = FoldersListAssembly.createFolders(appRouter: router).viewController
         router.push(viewController: vc, animated: true)
@@ -22,6 +24,7 @@ extension RouteFolders {
 }
 
 class AppRouter {
+    
     private let navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {

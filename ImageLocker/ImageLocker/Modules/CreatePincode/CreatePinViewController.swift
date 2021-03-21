@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 protocol CreatePinViewInput: class {
+    
     var presenter: CreatePinViewOutput? { get set }
     var viewController: UIViewController { get }
 
@@ -17,6 +18,7 @@ protocol CreatePinViewInput: class {
 }
 
 class CreatePinViewController: UIViewController, CreatePinViewInput {
+    
     var presenter: CreatePinViewOutput?
     var viewController: UIViewController { return self }
 

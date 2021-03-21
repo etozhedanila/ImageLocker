@@ -13,12 +13,14 @@ import UIKit
 //}
 
 class ImagePreviewCellConfigurator: CollectionCellConfigurator<ImagePreviewCell, PhotoCellModel> {
+    
     init(model: PhotoCellModel) {
         super.init(model: model, size: UIScreen.main.bounds.size)
     }
 }
 
 class ImagePreviewCell: UICollectionViewCell {
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.delegate = self
@@ -91,12 +93,14 @@ class ImagePreviewCell: UICollectionViewCell {
 }
 
 extension ImagePreviewCell: UIScrollViewDelegate {
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         self.photoView
     }
 }
 
 extension ImagePreviewCell: CollectionConfigurable {
+    
     func configure(model: PhotoCellModel) {
         photoView.image = model.image
     }

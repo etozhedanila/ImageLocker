@@ -9,6 +9,7 @@
 import Foundation
 
 protocol FoldersListViewOutput: class {
+    
     var view: FoldersListViewInput? { get set }
     var dataManager: FoldersListDataManager { get }
 
@@ -17,6 +18,7 @@ protocol FoldersListViewOutput: class {
 }
 
 class FoldersListPresenter: FoldersListViewOutput {
+    
     var dataManager: FoldersListDataManager
     weak var view: FoldersListViewInput?
     var interactor: FoldersListInteractorInput?
@@ -40,6 +42,7 @@ class FoldersListPresenter: FoldersListViewOutput {
 }
 
 extension FoldersListPresenter: FoldersListInteractorOutput {
+    
     func interactor(_ interactor: FoldersListInteractorInput, didLoadDirectories directories: [String]) {
         let foldersConfigurators = directories
             .map { FolderModel(name: $0) }
@@ -48,6 +51,7 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
     }
 
     func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String) {
+        
         let model = FolderModel(name: name)
         let folderConfigurator = FolderCellConfigurator(model: model)
         dataManager.items.append(folderConfigurator)
@@ -56,6 +60,7 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
     }
 
     func interactor(_ interactor: FoldersListInteractorInput, didRemoveDirectory directory: FolderModel) {
+        
         guard let index = dataManager.items.firstIndex(where: { ($0 as? FolderCellConfigurator)?.model.name == directory.name }) else { return }
         dataManager.items.remove(at: index)
         view?.perform(editing: [.init(position: index, editionType: .remove)])
@@ -64,11 +69,13 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
 
 extension FoldersListPresenter: FoldersListDataManagerDelegate {
     func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int) {
+        
         guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
         router.open(folder: folder)
     }
 
     func dataManager(_ dataManager: FoldersListDataManager, didRemoveDirectoryAt row: Int) {
+        
         guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
         interactor?.remove(folder: folder)
     }

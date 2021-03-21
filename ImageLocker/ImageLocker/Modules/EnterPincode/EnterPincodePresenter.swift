@@ -9,12 +9,14 @@
 import Foundation
 
 protocol EnterPincodeViewOutput: class {
+    
     var view: EnterPincodeViewInput? { get set }
     func viewDidLoad(_ view: EnterPincodeViewInput)
     func viewDidPassAuth(_ view: EnterPincodeViewInput)
 }
 
 class EnterPincodePresenter: EnterPincodeViewOutput {
+    
     weak var view: EnterPincodeViewInput?
     let router: EnterPincodeRouter
     let pincode: String
@@ -35,6 +37,7 @@ class EnterPincodePresenter: EnterPincodeViewOutput {
 }
 
 extension EnterPincodePresenter: EnterPincodeInteractorOutput {
+    
     func interactor(_ interactor: EnterPincodeInteractorInput, didCompressSuccessful isSuccess: Bool) {
         if isSuccess {
             router.showFolders()
@@ -45,6 +48,7 @@ extension EnterPincodePresenter: EnterPincodeInteractorOutput {
 }
 
 extension EnterPincodePresenter: PincodeViewDelegate {
+    
     func pincodeView(_ pincodeView: PincodeView, didFinishEnterPincode pincode: String) {
         interactor?.check(pincode: pincode)
     }

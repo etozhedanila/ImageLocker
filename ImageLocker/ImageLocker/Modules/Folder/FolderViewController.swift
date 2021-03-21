@@ -9,6 +9,7 @@
 import UIKit
 
 protocol FolderViewInput: class, CollectionEditable {
+    
     var viewController: UIViewController { get }
     var presenter: FolderViewOutput? { get set }
 
@@ -16,6 +17,7 @@ protocol FolderViewInput: class, CollectionEditable {
 }
 
 class FolderViewController: UIViewController, FolderViewInput {
+    
     var viewController: UIViewController { return self }
     var presenter: FolderViewOutput?
 

@@ -9,15 +9,18 @@
 import UIKit
 
 protocol FoldersListDataManagerDelegate: class {
+    
     func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int)
     func dataManager(_ dataManager: FoldersListDataManager, didRemoveDirectoryAt row: Int)
 }
 
 class FoldersListDataManager: BaseTableDataManager {
+    
     weak var delegate: FoldersListDataManagerDelegate?
 }
 
 extension FoldersListDataManager: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return items[indexPath.row].height
     }

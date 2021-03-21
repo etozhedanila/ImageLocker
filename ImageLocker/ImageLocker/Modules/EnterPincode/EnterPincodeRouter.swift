@@ -9,7 +9,9 @@
 import Foundation
 
 class EnterPincodeRouter: RouterInterface, RouteFolders {
+    
     var router: AppRouter
+    
     init(router: AppRouter) {
         self.router = router
     }

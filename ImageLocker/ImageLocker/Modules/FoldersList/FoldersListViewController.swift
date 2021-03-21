@@ -9,12 +9,13 @@
 import UIKit
 
 protocol FoldersListViewInput: TableEditable {
+    
     var presenter: FoldersListViewOutput? { get set }
     var viewController: UIViewController { get }
-
 }
 
 class FoldersListViewController: UIViewController, FoldersListViewInput {
+    
     var presenter: FoldersListViewOutput?
     var viewController: UIViewController { return self }
 
