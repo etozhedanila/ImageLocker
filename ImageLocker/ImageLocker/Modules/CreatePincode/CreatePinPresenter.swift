@@ -36,7 +36,7 @@ class CreatePinPresenter: CreatePinViewOutput {
 extension CreatePinPresenter: CreatePinInteractorOutput {
     
     func interactorDidSavePincode(_ interactor: CreatePinInteractorInput) {
-        router.showFolderList()
+        router.showFolders()
     }
 }
 
