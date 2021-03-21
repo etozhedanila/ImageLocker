@@ -10,12 +10,18 @@ import Foundation
 
 class PhotoPreviewAssembly {
     
-    static func createPhotoPreview(
-        appRouter: AppRouter,
-        selectedPhotoIndex: Int,
-        photos: [PhotoCellModel]) -> PhotoPreviewViewInput {
+    private let photos: [PhotoCellModel]
+    private let selectedPhotoIndex: Int
+    
+    init(photos: [PhotoCellModel], selectedPhotoIndex: Int = 0) {
+        self.photos = photos
+        self.selectedPhotoIndex = selectedPhotoIndex
+    }
+    
+    func createPhotoPreview(appRouter: AppRouter) -> PhotoPreviewViewInput {
         let dataManager = PhotoPreviewDataManager()
-        let presenter = PhotoPreviewPresenter(dataManager: dataManager, photos: photos)
+        let router = PhotoPreviewRouter(router: appRouter)
+        let presenter = PhotoPreviewPresenter(dataManager: dataManager, router: router, photos: photos)
         let viewController = PhotoPreviewViewController()
         
         dataManager.delegate = presenter

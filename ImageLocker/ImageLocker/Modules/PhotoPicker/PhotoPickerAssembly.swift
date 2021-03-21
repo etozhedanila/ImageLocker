@@ -13,6 +13,7 @@ class PhotoPickerAssembly {
     static func createPhotoPicker(
         appRouter: AppRouter,
         resultHandler: @escaping ([PhotoCellModel]) -> Void) -> PhotoPickerViewInput {
+        
         let router = PhotoPickerRouter(router: appRouter)
         let dataManager = PhotoPickerDataManager()
         let presenter = PhotoPickerPresenter(dataManager: dataManager, router: router)

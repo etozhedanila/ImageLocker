@@ -64,5 +64,6 @@ extension PhotoPickerPresenter: PhotoPickerDataManagerDelegate {
     
     func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt index: Int) {
         (dataManager.items[index] as? PhotoCellConfigurator)?.model.isSelected.toggle()
+        view?.reload() //TODO: update cell
     }
 }

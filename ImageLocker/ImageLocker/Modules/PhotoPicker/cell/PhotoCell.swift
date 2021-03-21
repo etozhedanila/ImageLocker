@@ -44,11 +44,10 @@ class PhotoCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override var isSelected: Bool {
-        didSet {
-            overlayView.isHidden.toggle()
-        }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        photoView.image = nil
     }
 
     private func makeConstraints() {
@@ -66,6 +65,12 @@ extension PhotoCell: CollectionConfigurable {
     
     func configure(model: PhotoCellModel) {
         self.photoView.image = model.image
-        self.overlayView.isHidden = !isSelected
+        self.overlayView.isHidden = !model.isSelected
+    }
+}
+
+extension PhotoCell {
+    func update(model: PhotoCellModel) {
+        self.overlayView.isHidden = !model.isSelected
     }
 }

@@ -9,12 +9,13 @@
 import UIKit
 
 protocol CollectionEditable {
+    
     var collectionView: UICollectionView { get }
 }
 
 extension CollectionEditable {
+    
     func reload() {
         collectionView.reloadData()
     }
-
 }

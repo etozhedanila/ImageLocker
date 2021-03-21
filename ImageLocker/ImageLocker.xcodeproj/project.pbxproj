@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB76B17D9E1B8B38BF84FEB3 /* Pods_ImageLocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */; };
+		F641FDA92607F235004CB078 /* PhotoPreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641FDA82607F235004CB078 /* PhotoPreviewRouter.swift */; };
 		F68B2ED224A90FC000623813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2ED124A90FC000623813 /* AppDelegate.swift */; };
 		F68B2EDC24A90FC000623813 /* ImageLocker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F68B2EDA24A90FC000623813 /* ImageLocker.xcdatamodeld */; };
 		F68B2EDE24A90FC200623813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F68B2EDD24A90FC200623813 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		899FBAAC141E1C5B7F943BB3 /* Pods-ImageLocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLocker.release.xcconfig"; path = "Target Support Files/Pods-ImageLocker/Pods-ImageLocker.release.xcconfig"; sourceTree = "<group>"; };
 		DCB441A2B52F124F5170B831 /* Pods_ImageLocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageLocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F641FDA82607F235004CB078 /* PhotoPreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewRouter.swift; sourceTree = "<group>"; };
 		F68B2ECE24A90FC000623813 /* ImageLocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68B2ED124A90FC000623813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F68B2EDB24A90FC000623813 /* ImageLocker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageLocker.xcdatamodel; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				F6CCF4D824D6A92E003CA3F3 /* PhotoPreviewAssembly.swift */,
 				F6CCF4CF24D695DD003CA3F3 /* PhotoPreviewViewController.swift */,
 				F6CCF4D424D6A718003CA3F3 /* PhotoPreviewPresenter.swift */,
+				F641FDA82607F235004CB078 /* PhotoPreviewRouter.swift */,
 				F6CCF4D624D6A74B003CA3F3 /* PhotoPreviewDataManager.swift */,
 				F6CCF4DA24D6A936003CA3F3 /* cell */,
 			);
@@ -450,6 +453,7 @@
 				F68B2F0E24A9342900623813 /* Pin.swift in Sources */,
 				F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */,
 				F6CCF4D024D695DD003CA3F3 /* PhotoPreviewViewController.swift in Sources */,
+				F641FDA92607F235004CB078 /* PhotoPreviewRouter.swift in Sources */,
 				F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */,
 				F6CCF4D324D6997C003CA3F3 /* ImagePreviewCell.swift in Sources */,
 				F68B2EEE24A9172B00623813 /* CreatePinPresenter.swift in Sources */,

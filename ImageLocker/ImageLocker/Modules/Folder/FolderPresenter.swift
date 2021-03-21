@@ -42,9 +42,26 @@ class FolderPresenter: FolderViewOutput {
             self?.interactor?.save(photos: photos)
         }
     }
+}
 
-    private func insert(photos: [PhotoCellModel]) {
+extension FolderPresenter: FolderInteractorOutput {
+    
+    func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [PhotoCellModel]) {
+        self.photos += photos
         let confs = photos.map { PhotoCellConfigurator(model: $0) }
+        dataManager.items.append(contentsOf: confs)
+        DispatchQueue.main.async {
+            self.view?.reload()
+        }
+    }
+
+    func interacor(_ interactor: FolderInteractorInput, didSavePhotos photos: [PhotoCellModel]) {
+        let photosToAppend: [PhotoCellModel] = photos.map {
+            var photo = $0
+            photo.isSelected = false
+            return photo
+        }
+        let confs = photosToAppend.map { PhotoCellConfigurator(model: $0) }
         dataManager.items.append(contentsOf: confs)
         self.photos.append(contentsOf: photos)
         DispatchQueue.main.async {
@@ -53,20 +70,8 @@ class FolderPresenter: FolderViewOutput {
     }
 }
 
-extension FolderPresenter: FolderInteractorOutput {
-    func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [PhotoCellModel]) {
-        self.photos = photos
-        let confs = photos.map { PhotoCellConfigurator(model: $0) }
-        dataManager.items.append(contentsOf: confs)
-        view?.reload()
-    }
-
-    func interacor(_ interactor: FolderInteractorInput, didSavePhotos photos: [PhotoCellModel]) {
-        insert(photos: photos)
-    }
-}
-
 extension FolderPresenter: FolderDataManagerDelegate {
+    
     func dataManager(_ dataManager: FolderDataManager, didSelectPhotoAt index: Int) {
         router.preview(photos: photos, selectedPhotoIndex: index)
     }
