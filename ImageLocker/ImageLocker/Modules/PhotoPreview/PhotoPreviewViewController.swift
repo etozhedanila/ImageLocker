@@ -12,6 +12,8 @@ protocol PhotoPreviewViewInput: class, CollectionEditable {
     
     var viewController: UIViewController { get }
     var presenter: PhotoPreviewViewOutput? { get set }
+    
+    func configure(title: String)
 }
 
 class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
@@ -36,6 +38,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
     
     private var defaultTintColor: UIColor?
     private var defaultBarTintColor: UIColor?
+    private var defaultTitleTextAttributes: [NSAttributedString.Key : Any]?
     
     private enum LocalizedString {
         static let close = "Закрыть"
@@ -64,18 +67,25 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         resetToDefaultNavigationBar()
     }
     
+    func configure(title: String) {
+        self.title = title
+    }
+    
     private func setupNavigationBar() {
         navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = closeButton
         defaultTintColor = navigationController?.navigationBar.tintColor
         defaultBarTintColor = navigationController?.navigationBar.barTintColor
+        defaultTitleTextAttributes = navigationController?.navigationBar.titleTextAttributes
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     private func resetToDefaultNavigationBar() {
         navigationController?.navigationBar.barTintColor = defaultBarTintColor
         navigationController?.navigationBar.tintColor = defaultTintColor ?? .blue
+        navigationController?.navigationBar.titleTextAttributes = defaultTitleTextAttributes
     }
     
     private func makeConstraints() {

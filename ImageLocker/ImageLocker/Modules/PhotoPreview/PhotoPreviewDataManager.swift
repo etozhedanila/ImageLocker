@@ -10,6 +10,7 @@ import UIKit
 
 protocol PhotoPreviewDataManagerDelegate: class {
     
+    func dataManager(_ dataManager: PhotoPreviewDataManager, didScrollToItemAtIndex index: Int)
 }
 
 class PhotoPreviewDataManager: BaseCollectionDataManager {

@@ -41,6 +41,7 @@ class FoldersListPresenter: FoldersListViewOutput {
     }
 }
 
+// MARK: - FoldersListInteractorOutput
 extension FoldersListPresenter: FoldersListInteractorOutput {
     
     func interactor(_ interactor: FoldersListInteractorInput, didLoadDirectories directories: [String]) {
@@ -51,7 +52,6 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
     }
 
     func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String) {
-        
         let model = FolderModel(name: name)
         let folderConfigurator = FolderCellConfigurator(model: model)
         dataManager.items.append(folderConfigurator)
@@ -60,22 +60,21 @@ extension FoldersListPresenter: FoldersListInteractorOutput {
     }
 
     func interactor(_ interactor: FoldersListInteractorInput, didRemoveDirectory directory: FolderModel) {
-        
         guard let index = dataManager.items.firstIndex(where: { ($0 as? FolderCellConfigurator)?.model.name == directory.name }) else { return }
         dataManager.items.remove(at: index)
         view?.perform(editing: [.init(position: index, editionType: .remove)])
      }
 }
 
+// MARK: - FoldersListDataManagerDelegate
 extension FoldersListPresenter: FoldersListDataManagerDelegate {
+    
     func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int) {
-        
         guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
         router.open(folder: folder)
     }
 
     func dataManager(_ dataManager: FoldersListDataManager, didRemoveDirectoryAt row: Int) {
-        
         guard let folder = (dataManager.items[row] as? FolderCellConfigurator)?.model else { return }
         interactor?.remove(folder: folder)
     }

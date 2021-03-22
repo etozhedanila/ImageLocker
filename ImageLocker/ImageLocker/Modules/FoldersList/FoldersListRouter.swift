@@ -31,6 +31,8 @@ class FoldersListRouter: RouterInterface {
     func open(folder: FolderModel) {
         let folderAssembly = FolderAssembly(folder: folder)
         let folderVC = folderAssembly.createFolders(appRouter: router).viewController
-        router.push(viewController: folderVC, animated: true)
+        DispatchQueue.main.async {
+            self.router.push(viewController: folderVC, animated: true)            
+        }
     }
 }

@@ -23,7 +23,14 @@ class PhotoPreviewPresenter: PhotoPreviewViewOutput {
     
     weak var view: PhotoPreviewViewInput?
     var dataManager: PhotoPreviewDataManager
-    var selectedPhotoIndex: Int = 0
+    
+    var selectedPhotoIndex: Int = 0 {
+        didSet {
+            let title = "\(selectedPhotoIndex + 1) из \(photos.count)"
+            view?.configure(title: title)
+        }
+    }
+    
     var photos: [PhotoCellModel]
     private let router: PhotoPreviewRouter
     
@@ -44,6 +51,10 @@ class PhotoPreviewPresenter: PhotoPreviewViewOutput {
     }
 }
 
+// MARK: - PhotoPreviewDataManagerDelegate
 extension PhotoPreviewPresenter: PhotoPreviewDataManagerDelegate {
     
+    func dataManager(_ dataManager: PhotoPreviewDataManager, didScrollToItemAtIndex index: Int) {
+        selectedPhotoIndex = index
+    }
 }

@@ -25,8 +25,8 @@ class PhotoPreviewAssembly {
         let viewController = PhotoPreviewViewController()
         
         dataManager.delegate = presenter
-        presenter.selectedPhotoIndex = selectedPhotoIndex
         presenter.view = viewController
+        presenter.selectedPhotoIndex = selectedPhotoIndex
         viewController.presenter = presenter
         
         return viewController

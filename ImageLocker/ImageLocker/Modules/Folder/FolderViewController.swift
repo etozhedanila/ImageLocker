@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FolderViewInput: class, CollectionEditable {
+protocol FolderViewInput: class, CollectionEditable, Loadable {
     
     var viewController: UIViewController { get }
     var presenter: FolderViewOutput? { get set }
@@ -30,6 +30,12 @@ class FolderViewController: UIViewController, FolderViewInput {
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: String(describing: PhotoCell.self))
         return collectionView
     }()
+    
+    var loader: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .gray)
+        view.isHidden = true
+        return view
+    }()
 
     private lazy var addButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
@@ -40,6 +46,7 @@ class FolderViewController: UIViewController, FolderViewInput {
         super.loadView()
         view.backgroundColor = .white
         view.addSubview(collectionView)
+        view.addSubview(loader)
     }
 
     override func viewDidLoad() {
@@ -56,6 +63,10 @@ class FolderViewController: UIViewController, FolderViewInput {
     private func makeConstraints() {
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+        }
+        
+        loader.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 

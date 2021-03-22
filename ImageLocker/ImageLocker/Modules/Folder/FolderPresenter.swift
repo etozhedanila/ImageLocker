@@ -34,7 +34,10 @@ class FolderPresenter: FolderViewOutput {
 
     func viewDidLoad(_ view: FolderViewInput) {
         view.configure(title: folder.name)
-        interactor?.fetchPhotos(folder: folder)
+        view.showLoading()
+        DispatchQueue.global(qos: .utility).async {
+            self.interactor?.fetchPhotos(folder: self.folder)
+        }
     }
 
     func viewDidTapAddImage(_ view: FolderViewInput) {
@@ -45,6 +48,7 @@ class FolderPresenter: FolderViewOutput {
     }
 }
 
+// MARK: - FolderInteractorOutput
 extension FolderPresenter: FolderInteractorOutput {
     
     func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [PhotoCellModel]) {
@@ -52,6 +56,7 @@ extension FolderPresenter: FolderInteractorOutput {
         let confs = photos.map { PhotoCellConfigurator(model: $0) }
         dataManager.items.append(contentsOf: confs)
         DispatchQueue.main.async {
+            self.view?.stopLoading()
             self.view?.reload()
         }
     }
@@ -71,6 +76,7 @@ extension FolderPresenter: FolderInteractorOutput {
     }
 }
 
+// MARK: - FolderDataManagerDelegate
 extension FolderPresenter: FolderDataManagerDelegate {
     
     func dataManager(_ dataManager: FolderDataManager, didSelectPhotoAt index: Int) {

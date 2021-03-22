@@ -26,6 +26,7 @@
 		F68B2F2B24AA68F000623813 /* EnterPincodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */; };
 		F68B2F2D24AA68FC00623813 /* EnterPincodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */; };
 		F68B2F2F24AA690C00623813 /* EnterPincodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */; };
+		F6952EBA2609024F0021EC7F /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6952EB92609024F0021EC7F /* Loadable.swift */; };
 		F69C187724AE74DB0007283D /* FoldersListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187624AE74DB0007283D /* FoldersListAssembly.swift */; };
 		F69C187A24AE74F10007283D /* FoldersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187924AE74F10007283D /* FoldersListPresenter.swift */; };
 		F69C187C24AE74F90007283D /* FoldersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C187B24AE74F90007283D /* FoldersListRouter.swift */; };
@@ -81,6 +82,7 @@
 		F68B2F2A24AA68F000623813 /* EnterPincodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeRouter.swift; sourceTree = "<group>"; };
 		F68B2F2C24AA68FC00623813 /* EnterPincodeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeInteractor.swift; sourceTree = "<group>"; };
 		F68B2F2E24AA690C00623813 /* EnterPincodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPincodeViewController.swift; sourceTree = "<group>"; };
+		F6952EB92609024F0021EC7F /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		F69C187624AE74DB0007283D /* FoldersListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListAssembly.swift; sourceTree = "<group>"; };
 		F69C187924AE74F10007283D /* FoldersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListPresenter.swift; sourceTree = "<group>"; };
 		F69C187B24AE74F90007283D /* FoldersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListRouter.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				F6CCF4B724D60245003CA3F3 /* CollectionEditable.swift */,
 				F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */,
 				F6A5DEF624D5C49C00BF0911 /* BaseCollectionDataManager.swift */,
+				F6952EB92609024F0021EC7F /* Loadable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				F6CCF4D524D6A718003CA3F3 /* PhotoPreviewPresenter.swift in Sources */,
 				F68B2F2924AA68E600623813 /* EnterPincodePresenter.swift in Sources */,
 				F6A5DEF224D5C21800BF0911 /* PhotoCell.swift in Sources */,
+				F6952EBA2609024F0021EC7F /* Loadable.swift in Sources */,
 				F6A5DEF424D5C3F600BF0911 /* PhotoPickerDataManager.swift in Sources */,
 				F69C187C24AE74F90007283D /* FoldersListRouter.swift in Sources */,
 				F68B2EF224A9174D00623813 /* CreatePinRouter.swift in Sources */,

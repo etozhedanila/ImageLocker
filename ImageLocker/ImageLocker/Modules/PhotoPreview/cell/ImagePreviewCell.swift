@@ -8,10 +8,6 @@
 
 import UIKit
 
-//struct ImagePreviewModel {
-//    var image: UIImage
-//}
-
 class ImagePreviewCellConfigurator: CollectionCellConfigurator<ImagePreviewCell, PhotoCellModel> {
     
     init(model: PhotoCellModel) {
@@ -92,6 +88,7 @@ class ImagePreviewCell: UICollectionViewCell {
     }
 }
 
+// MARK: - UIScrollViewDelegate
 extension ImagePreviewCell: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -99,6 +96,7 @@ extension ImagePreviewCell: UIScrollViewDelegate {
     }
 }
 
+// MARK: - CollectionConfigurable
 extension ImagePreviewCell: CollectionConfigurable {
     
     func configure(model: PhotoCellModel) {
