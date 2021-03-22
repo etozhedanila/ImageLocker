@@ -27,9 +27,12 @@ struct PhotoCellModel {
 class PhotoCellConfigurator: CollectionCellConfigurator<PhotoCell, PhotoCellModel> {
     
     init(model: PhotoCellModel) {
-        let width = UIScreen.main.bounds.width / 4
-        let size = CGSize(width: width, height: width)
-        super.init(model: model, size: size)
+        super.init(model: model, size: PhotoCellConfigurator.photoSize)
+    }
+    
+    static var photoSize: CGSize {
+        let width = (UIScreen.main.bounds.width - (3 * 3)) / 4
+        return CGSize(width: width, height: width)
     }
 }
 
@@ -38,6 +41,7 @@ class PhotoCell: UICollectionViewCell {
     private let photoView: UIImageView = {
         let photoView = UIImageView()
         photoView.contentMode = .scaleAspectFill
+        photoView.clipsToBounds = true
         return photoView
     }()
 

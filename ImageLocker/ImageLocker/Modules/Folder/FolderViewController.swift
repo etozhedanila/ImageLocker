@@ -26,13 +26,13 @@ class FolderViewController: UIViewController, FolderViewInput {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = presenter?.dataManager
         collectionView.delegate = presenter?.dataManager
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .black
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: String(describing: PhotoCell.self))
         return collectionView
     }()
     
     var loader: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .gray)
+        let view = UIActivityIndicatorView(style: .white)
         view.isHidden = true
         return view
     }()

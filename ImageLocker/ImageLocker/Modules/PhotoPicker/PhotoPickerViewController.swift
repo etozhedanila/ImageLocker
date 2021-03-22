@@ -22,7 +22,7 @@ class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
     var presenter: PhotoPickerViewOutput?
     
     var loader: UIActivityIndicatorView = {
-        let loader = UIActivityIndicatorView(style: .gray)
+        let loader = UIActivityIndicatorView(style: .white)
         loader.isHidden = true
         return loader
     }()
@@ -32,7 +32,7 @@ class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = presenter?.dataManager
         collectionView.delegate = presenter?.dataManager
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .black
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: String(describing: PhotoCell.self))
         return collectionView
     }()

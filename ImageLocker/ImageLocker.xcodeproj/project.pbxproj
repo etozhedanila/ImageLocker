@@ -36,6 +36,8 @@
 		F69C18AC24AE80780007283D /* TableEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AB24AE80780007283D /* TableEditable.swift */; };
 		F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */; };
 		F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18B024AE8C620007283D /* CreateFolderAlert.swift */; };
+		F69F7B302609358800E42A62 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F7B2F2609358800E42A62 /* AsyncOperation.swift */; };
+		F69F7B3326093E8A00E42A62 /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F7B3226093E8A00E42A62 /* FetchPhotoOperation.swift */; };
 		F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */; };
 		F6A5DEF224D5C21800BF0911 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF124D5C21800BF0911 /* PhotoCell.swift */; };
 		F6A5DEF424D5C3F600BF0911 /* PhotoPickerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */; };
@@ -92,6 +94,8 @@
 		F69C18AB24AE80780007283D /* TableEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEditable.swift; sourceTree = "<group>"; };
 		F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataManager.swift; sourceTree = "<group>"; };
 		F69C18B024AE8C620007283D /* CreateFolderAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderAlert.swift; sourceTree = "<group>"; };
+		F69F7B2F2609358800E42A62 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		F69F7B3226093E8A00E42A62 /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
 		F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		F6A5DEF124D5C21800BF0911 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerDataManager.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */,
 				F6A5DEF624D5C49C00BF0911 /* BaseCollectionDataManager.swift */,
 				F6952EB92609024F0021EC7F /* Loadable.swift */,
+				F69F7B2F2609358800E42A62 /* AsyncOperation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -260,6 +265,14 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		F69F7B3526093E9100E42A62 /* operation */ = {
+			isa = PBXGroup;
+			children = (
+				F69F7B3226093E8A00E42A62 /* FetchPhotoOperation.swift */,
+			);
+			path = operation;
+			sourceTree = "<group>";
+		};
 		F6A5DEF024D5C16B00BF0911 /* PhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +282,7 @@
 				F6CCF4B924D602FB003CA3F3 /* PhotoPickerInteractor.swift */,
 				F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */,
 				F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */,
+				F69F7B3526093E9100E42A62 /* operation */,
 				F6A5DEF524D5C40A00BF0911 /* cell */,
 			);
 			path = PhotoPicker;
@@ -484,6 +498,8 @@
 				F69C188224AE751E0007283D /* FoldersListInteractor.swift in Sources */,
 				F6CCF4D924D6A92E003CA3F3 /* PhotoPreviewAssembly.swift in Sources */,
 				F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */,
+				F69F7B3326093E8A00E42A62 /* FetchPhotoOperation.swift in Sources */,
+				F69F7B302609358800E42A62 /* AsyncOperation.swift in Sources */,
 				F69C187724AE74DB0007283D /* FoldersListAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

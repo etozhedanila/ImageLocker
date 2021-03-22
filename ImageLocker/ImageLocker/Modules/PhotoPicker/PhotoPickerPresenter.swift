@@ -33,9 +33,8 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
 
     func viewDidLoad(_ view: PhotoPickerViewInput) {
         view.showLoading()
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.interactor?.fetchPhotos()
-        }
+
+        interactor?.fetchPhotos(photoSize: PhotoCellConfigurator.photoSize)
     }
 
     func viewDidEndPicking(_ view: PhotoPickerViewInput) {

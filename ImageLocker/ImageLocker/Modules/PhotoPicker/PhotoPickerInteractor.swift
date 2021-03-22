@@ -13,7 +13,7 @@ protocol PhotoPickerInteractorInput: class {
     
     var presenter: PhotoPickerInteractorOutput? { get set }
 
-    func fetchPhotos()
+    func fetchPhotos(photoSize: CGSize)
 }
 
 protocol PhotoPickerInteractorOutput: class {
@@ -24,26 +24,44 @@ protocol PhotoPickerInteractorOutput: class {
 class PhotoPickerInteractor: PhotoPickerInteractorInput {
     
     weak var presenter: PhotoPickerInteractorOutput?
+    
+    private let fetchPhotosQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "com.vitalySubbotin.ImageLocker.PhotoPickerInteractor.fetchPhotosQueue"
+        queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .userInitiated
+        return queue
+    }()
 
-    func fetchPhotos() {
-        let imageManager = PHImageManager.default()
-
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
-        requestOptions.deliveryMode = .fastFormat
-
+    func fetchPhotos(photoSize: CGSize) {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
 
         let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        guard fetchResult.count > 0 else {
+            presenter?.interactor(self, didReceivePhotos: [])
+            return
+        }
         var images: [UIImage] = []
-        fetchResult.objects(at: .init(integersIn: 0..<fetchResult.count)).forEach {
-            let size = CGSize(width: 500, height: 500)
-            imageManager.requestImage(for: $0, targetSize: size, contentMode: .aspectFill, options: requestOptions) { (image, _) in
+        let indexes = IndexSet(integersIn: 0..<fetchResult.count)
+        fetchResult.objects(at: indexes).enumerated().forEach { (index, asset) in
+            let fetchPhotoOperation = FetchPhotoOperation(asset: asset, size: photoSize) { (image) in
                 guard let image = image else { return }
                 images.append(image)
             }
+            self.fetchPhotosQueue.addOperation(fetchPhotoOperation)
+            if (index+1).isMultiple(of: 100), index > 0 {
+                self.fetchPhotosQueue.addOperation { [weak self] in
+                    guard let self = self else { return }
+                    self.presenter?.interactor(self, didReceivePhotos: images)
+                    images.removeAll()
+                }
+            }
         }
-        presenter?.interactor(self, didReceivePhotos: images)
+        
+        fetchPhotosQueue.addOperation { [weak self] in
+            guard let self = self, !images.isEmpty else { return }
+            self.presenter?.interactor(self, didReceivePhotos: images)
+        }
     }
 }
