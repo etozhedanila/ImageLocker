@@ -35,7 +35,11 @@ class PhotoCellConfigurator: CollectionCellConfigurator<PhotoCell, PhotoCellMode
 
 class PhotoCell: UICollectionViewCell {
     
-    private let photoView = UIImageView()
+    private let photoView: UIImageView = {
+        let photoView = UIImageView()
+        photoView.contentMode = .scaleAspectFill
+        return photoView
+    }()
 
     private let overlayView: UIView = {
         let view = UIView()

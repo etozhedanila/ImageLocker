@@ -30,7 +30,7 @@ class PhotoPickerInteractor: PhotoPickerInteractorInput {
 
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = true
-        requestOptions.deliveryMode = .highQualityFormat
+        requestOptions.deliveryMode = .fastFormat
 
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]

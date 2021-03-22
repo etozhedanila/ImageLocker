@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PhotoPickerViewInput: class, CollectionEditable {
+protocol PhotoPickerViewInput: class, CollectionEditable, Loadable {
     
     var viewController: UIViewController { get }
     var presenter: PhotoPickerViewOutput? { get set }
@@ -20,6 +20,12 @@ class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
     
     var viewController: UIViewController { return self }
     var presenter: PhotoPickerViewOutput?
+    
+    var loader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(style: .gray)
+        loader.isHidden = true
+        return loader
+    }()
 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -45,6 +51,7 @@ class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
         super.loadView()
         view.backgroundColor = .white
         view.addSubview(collectionView)
+        view.addSubview(loader)
     }
 
     override func viewDidLoad() {
@@ -61,8 +68,12 @@ class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
     }
 
     private func makeConstraints() {
-        collectionView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        loader.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 

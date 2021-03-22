@@ -32,7 +32,10 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
     }
 
     func viewDidLoad(_ view: PhotoPickerViewInput) {
-        fetchPhotos()
+        view.showLoading()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.interactor?.fetchPhotos()
+        }
     }
 
     func viewDidEndPicking(_ view: PhotoPickerViewInput) {
@@ -41,10 +44,6 @@ class PhotoPickerPresenter: PhotoPickerViewOutput {
             .filter { $0.isSelected }
         resultHandler?(selectedPhotos)
         router.close()
-    }
-
-    private func fetchPhotos() {
-        interactor?.fetchPhotos()
     }
 }
 
@@ -55,6 +54,7 @@ extension PhotoPickerPresenter: PhotoPickerInteractorOutput {
         let confs = models.map { PhotoCellConfigurator(model: $0) }
         dataManager.items.append(contentsOf: confs)
         DispatchQueue.main.async {
+            self.view?.stopLoading()
             self.view?.reload()
         }
     }
@@ -64,6 +64,8 @@ extension PhotoPickerPresenter: PhotoPickerDataManagerDelegate {
     
     func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt index: Int) {
         (dataManager.items[index] as? PhotoCellConfigurator)?.model.isSelected.toggle()
-        view?.reload() //TODO: update cell
+        DispatchQueue.main.async {
+            self.view?.reload() //TODO: update cell
+        }
     }
 }

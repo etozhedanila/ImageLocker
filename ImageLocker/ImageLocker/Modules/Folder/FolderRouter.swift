@@ -27,7 +27,9 @@ class FolderRouter: RouterInterface {
     func openPhotoLibrary(imagesPicked: @escaping ([PhotoCellModel]) -> Void) {
         let authorizationStatus = PHPhotoLibrary.authorizationStatus()
         if authorizationStatus == .authorized {
-            presentPhotoLibrary(resultHandler: imagesPicked)
+            DispatchQueue.main.async {
+                self.presentPhotoLibrary(resultHandler: imagesPicked)
+            }
         } else {
             requestAuth { [weak self] isSuccess in
                 guard let self = self, isSuccess else { return }
