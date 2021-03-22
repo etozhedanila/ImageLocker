@@ -29,6 +29,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         collectionView.dataSource = self.presenter?.dataManager
         collectionView.isPagingEnabled = true
         collectionView.register(ImagePreviewCell.self, forCellWithReuseIdentifier: String(describing: ImagePreviewCell.self))
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     

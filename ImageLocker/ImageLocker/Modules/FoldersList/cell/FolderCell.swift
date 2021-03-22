@@ -37,11 +37,18 @@ class FolderCell: UITableViewCell {
         imageView.image = UIImage(named: "folder_icon")
         return imageView
     }()
+    
+    private let separator: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(nameLabel)
         contentView.addSubview(folderImage)
+        contentView.addSubview(separator)
         backgroundColor = .black
         makeConstraints()
     }
@@ -51,19 +58,26 @@ class FolderCell: UITableViewCell {
     }
 
     private func makeConstraints() {
-        folderImage.snp.makeConstraints { (make) in
+        folderImage.snp.makeConstraints { make in
             make.leading.top.equalToSuperview().offset(20)
             make.height.width.equalTo(60)
         }
 
-        nameLabel.snp.makeConstraints { (make) in
+        nameLabel.snp.makeConstraints { make in
             make.leading.equalTo(folderImage.snp.trailing).offset(10)
             make.centerY.equalTo(folderImage)
             make.trailing.equalToSuperview().inset(20)
         }
+        
+        separator.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.trailing.bottom.equalToSuperview()
+            make.leading.equalTo(folderImage.snp.trailing)
+        }
     }
 }
 
+// MARK: - ConfigurableCell
 extension FolderCell: ConfigurableCell {
     
     func configure(model: FolderModel) {
