@@ -110,7 +110,7 @@ extension PhotoCell: CollectionConfigurable {
 }
 
 extension PhotoCell {
-    func update(model: PhotoCellModel) {
-        self.overlayView.isHidden = !model.isSelected
+    func update(isSelected: Bool) {
+        self.overlayView.isHidden = !isSelected
     }
 }

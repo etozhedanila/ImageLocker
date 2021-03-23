@@ -14,6 +14,7 @@ protocol PhotoPickerViewInput: class, CollectionEditable, Loadable {
     var presenter: PhotoPickerViewOutput? { get set }
 
     func enableDoneButton(_ isEnabled: Bool)
+    func updateCell(at index: Int, isSelected: Bool)
 }
 
 class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
@@ -65,6 +66,11 @@ class PhotoPickerViewController: UIViewController, PhotoPickerViewInput {
     func enableDoneButton(_ isEnabled: Bool) {
         navigationItem.rightBarButtonItem?.isEnabled = isEnabled
         navigationItem.rightBarButtonItem?.title = isEnabled ? LocalizedString.done : ""
+    }
+    
+    func updateCell(at index: Int, isSelected: Bool) {
+        let cell = collectionView.cellForItem(at: .init(item: index, section: 0))
+        (cell as? PhotoCell)?.update(isSelected: isSelected)
     }
 
     private func makeConstraints() {

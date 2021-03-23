@@ -70,7 +70,7 @@ extension PhotoPickerPresenter: PhotoPickerDataManagerDelegate {
             selectedPhotos.remove(at: selectedIndex)
         }
         DispatchQueue.main.async {
-            self.view?.reload() //TODO: update cell
+            self.view?.updateCell(at: index, isSelected: photoModel.isSelected)
         }
     }
 }
