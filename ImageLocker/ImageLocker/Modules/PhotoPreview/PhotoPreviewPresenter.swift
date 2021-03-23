@@ -44,6 +44,7 @@ class PhotoPreviewPresenter: PhotoPreviewViewOutput {
         let confs = photos.map { ImagePreviewCellConfigurator(model: $0) }
         dataManager.items.append(contentsOf: confs)
         view.reload()
+        view.set(page: selectedPhotoIndex)
     }
     
     func viewDidTapClose(_ view: PhotoPreviewViewInput) {

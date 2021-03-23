@@ -14,6 +14,7 @@ protocol PhotoPreviewViewInput: class, CollectionEditable {
     var presenter: PhotoPreviewViewOutput? { get set }
     
     func configure(title: String)
+    func set(page: Int)
 }
 
 class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
@@ -70,6 +71,11 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
     
     func configure(title: String) {
         self.title = title
+    }
+    
+    func set(page: Int) {
+        let screenWidth = UIScreen.main.bounds.width
+        collectionView.contentOffset = .init(x: screenWidth * CGFloat(page), y: 0)
     }
     
     private func setupNavigationBar() {
