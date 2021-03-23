@@ -24,7 +24,6 @@ class FolderPresenter: FolderViewOutput {
     let router: FolderRouter
     var interactor: FolderInteractorInput?
     var folder: FolderModel
-    private var photos: [PhotoCellModel] = []
 
     init(router: FolderRouter, dataManager: FolderDataManager, folder: FolderModel) {
         self.dataManager = dataManager
@@ -50,26 +49,20 @@ class FolderPresenter: FolderViewOutput {
 
 // MARK: - FolderInteractorOutput
 extension FolderPresenter: FolderInteractorOutput {
-    
-    func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [PhotoCellModel]) {
-        self.photos += photos
-        let confs = photos.map { PhotoCellConfigurator(model: $0) }
+
+    func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [SavedPhotoCellModel]) {
+        let confs = photos.map { SavedPhotoCellConfigurator(model: $0) }
         dataManager.items.append(contentsOf: confs)
         DispatchQueue.main.async {
             self.view?.stopLoading()
             self.view?.reload()
         }
     }
-
-    func interacor(_ interactor: FolderInteractorInput, didSavePhotos photos: [PhotoCellModel]) {
-        let photosToAppend: [PhotoCellModel] = photos.map {
-            var photo = $0
-            photo.isSelected = false
-            return photo
-        }
-        let confs = photosToAppend.map { PhotoCellConfigurator(model: $0) }
+    
+    func interacor(_ interactor: FolderInteractorInput, didSavePhotosWithUrls urls: [URL]) {
+        let models = urls.map { SavedPhotoCellModel(url: $0) }
+        let confs = models.map { SavedPhotoCellConfigurator(model: $0) }
         dataManager.items.append(contentsOf: confs)
-        self.photos.append(contentsOf: photos)
         DispatchQueue.main.async {
             self.view?.reload()
         }
@@ -80,6 +73,7 @@ extension FolderPresenter: FolderInteractorOutput {
 extension FolderPresenter: FolderDataManagerDelegate {
     
     func dataManager(_ dataManager: FolderDataManager, didSelectPhotoAt index: Int) {
+        let photos = dataManager.items.compactMap { ($0 as? SavedPhotoCellConfigurator)?.model }
         router.preview(photos: photos, selectedPhotoIndex: index)
     }
 }

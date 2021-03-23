@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ImagePreviewCellConfigurator: CollectionCellConfigurator<ImagePreviewCell, PhotoCellModel> {
+class ImagePreviewCellConfigurator: CollectionCellConfigurator<ImagePreviewCell, SavedPhotoCellModel> {
     
-    init(model: PhotoCellModel) {
+    init(model: SavedPhotoCellModel) {
         super.init(model: model, size: UIScreen.main.bounds.size)
     }
 }
@@ -99,7 +99,7 @@ extension ImagePreviewCell: UIScrollViewDelegate {
 // MARK: - CollectionConfigurable
 extension ImagePreviewCell: CollectionConfigurable {
     
-    func configure(model: PhotoCellModel) {
-        photoView.image = model.image
+    func configure(model: SavedPhotoCellModel) {
+        photoView.image = UIImage(contentsOfFile: model.url.path)
     }
 }

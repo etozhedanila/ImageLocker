@@ -37,7 +37,8 @@
 		F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */; };
 		F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C18B024AE8C620007283D /* CreateFolderAlert.swift */; };
 		F69F7B302609358800E42A62 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F7B2F2609358800E42A62 /* AsyncOperation.swift */; };
-		F69F7B3326093E8A00E42A62 /* FetchPhotoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F7B3226093E8A00E42A62 /* FetchPhotoOperation.swift */; };
+		F69F7B3B260A495A00E42A62 /* PhotosCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F7B3A260A495A00E42A62 /* PhotosCacheManager.swift */; };
+		F69F7B3E260A4C3500E42A62 /* SavedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F7B3D260A4C3500E42A62 /* SavedPhotoCell.swift */; };
 		F6A5DEEF24D5C13200BF0911 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */; };
 		F6A5DEF224D5C21800BF0911 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF124D5C21800BF0911 /* PhotoCell.swift */; };
 		F6A5DEF424D5C3F600BF0911 /* PhotoPickerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */; };
@@ -45,6 +46,7 @@
 		F6A5DEF924D5EF9600BF0911 /* PhotoPickerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEF824D5EF9600BF0911 /* PhotoPickerAssembly.swift */; };
 		F6A5DEFB24D5EFC700BF0911 /* PhotoPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */; };
 		F6A5DEFD24D5EFD800BF0911 /* PhotoPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5DEFC24D5EFD800BF0911 /* PhotoPickerPresenter.swift */; };
+		F6C4787B260A9D220005033F /* FetchPhotoUrlOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C4787A260A9D220005033F /* FetchPhotoUrlOperation.swift */; };
 		F6CC92D524CC832700B59CF0 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92D424CC832700B59CF0 /* FolderCell.swift */; };
 		F6CC930024CCA15B00B59CF0 /* FolderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */; };
 		F6CC930324CCA29300B59CF0 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CC930224CCA29300B59CF0 /* FolderViewController.swift */; };
@@ -95,7 +97,8 @@
 		F69C18AE24AE80AB0007283D /* BaseTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableDataManager.swift; sourceTree = "<group>"; };
 		F69C18B024AE8C620007283D /* CreateFolderAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderAlert.swift; sourceTree = "<group>"; };
 		F69F7B2F2609358800E42A62 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
-		F69F7B3226093E8A00E42A62 /* FetchPhotoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoOperation.swift; sourceTree = "<group>"; };
+		F69F7B3A260A495A00E42A62 /* PhotosCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCacheManager.swift; sourceTree = "<group>"; };
+		F69F7B3D260A4C3500E42A62 /* SavedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPhotoCell.swift; sourceTree = "<group>"; };
 		F6A5DEEE24D5C13200BF0911 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		F6A5DEF124D5C21800BF0911 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerDataManager.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		F6A5DEF824D5EF9600BF0911 /* PhotoPickerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAssembly.swift; sourceTree = "<group>"; };
 		F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerRouter.swift; sourceTree = "<group>"; };
 		F6A5DEFC24D5EFD800BF0911 /* PhotoPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPresenter.swift; sourceTree = "<group>"; };
+		F6C4787A260A9D220005033F /* FetchPhotoUrlOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoUrlOperation.swift; sourceTree = "<group>"; };
 		F6CC92D424CC832700B59CF0 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		F6CC92FF24CCA15B00B59CF0 /* FolderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderAssembly.swift; sourceTree = "<group>"; };
 		F6CC930224CCA29300B59CF0 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				F6A5DEF624D5C49C00BF0911 /* BaseCollectionDataManager.swift */,
 				F6952EB92609024F0021EC7F /* Loadable.swift */,
 				F69F7B2F2609358800E42A62 /* AsyncOperation.swift */,
+				F69F7B3A260A495A00E42A62 /* PhotosCacheManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -265,12 +270,12 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		F69F7B3526093E9100E42A62 /* operation */ = {
+		F69F7B40260A4C3A00E42A62 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				F69F7B3226093E8A00E42A62 /* FetchPhotoOperation.swift */,
+				F69F7B3D260A4C3500E42A62 /* SavedPhotoCell.swift */,
 			);
-			path = operation;
+			path = cell;
 			sourceTree = "<group>";
 		};
 		F6A5DEF024D5C16B00BF0911 /* PhotoPicker */ = {
@@ -282,7 +287,6 @@
 				F6CCF4B924D602FB003CA3F3 /* PhotoPickerInteractor.swift */,
 				F6A5DEFA24D5EFC700BF0911 /* PhotoPickerRouter.swift */,
 				F6A5DEF324D5C3F600BF0911 /* PhotoPickerDataManager.swift */,
-				F69F7B3526093E9100E42A62 /* operation */,
 				F6A5DEF524D5C40A00BF0911 /* cell */,
 			);
 			path = PhotoPicker;
@@ -294,6 +298,14 @@
 				F6A5DEF124D5C21800BF0911 /* PhotoCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		F6C4787D260A9D260005033F /* operation */ = {
+			isa = PBXGroup;
+			children = (
+				F6C4787A260A9D220005033F /* FetchPhotoUrlOperation.swift */,
+			);
+			path = operation;
 			sourceTree = "<group>";
 		};
 		F6CC92D624CC832C00B59CF0 /* cell */ = {
@@ -313,6 +325,8 @@
 				F6CC930624CCA2AB00B59CF0 /* FolderRouter.swift */,
 				F6CC930824CCA2B500B59CF0 /* FolderDataManager.swift */,
 				F6CC930A24CCA2C100B59CF0 /* FolderInteractor.swift */,
+				F6C4787D260A9D260005033F /* operation */,
+				F69F7B40260A4C3A00E42A62 /* cell */,
 			);
 			path = Folder;
 			sourceTree = "<group>";
@@ -490,7 +504,9 @@
 				F69C18AC24AE80780007283D /* TableEditable.swift in Sources */,
 				F68B2EE924A916F900623813 /* CreatePinViewController.swift in Sources */,
 				F68B2F1024AA566800623813 /* AppRouter.swift in Sources */,
+				F6C4787B260A9D220005033F /* FetchPhotoUrlOperation.swift in Sources */,
 				F69C188024AE75150007283D /* FoldersListViewController.swift in Sources */,
+				F69F7B3E260A4C3500E42A62 /* SavedPhotoCell.swift in Sources */,
 				F6CCF4BA24D602FB003CA3F3 /* PhotoPickerInteractor.swift in Sources */,
 				F69C18B124AE8C620007283D /* CreateFolderAlert.swift in Sources */,
 				F69C18AF24AE80AB0007283D /* BaseTableDataManager.swift in Sources */,
@@ -498,7 +514,7 @@
 				F69C188224AE751E0007283D /* FoldersListInteractor.swift in Sources */,
 				F6CCF4D924D6A92E003CA3F3 /* PhotoPreviewAssembly.swift in Sources */,
 				F68B2EEC24A9171F00623813 /* CreatePinAssembly.swift in Sources */,
-				F69F7B3326093E8A00E42A62 /* FetchPhotoOperation.swift in Sources */,
+				F69F7B3B260A495A00E42A62 /* PhotosCacheManager.swift in Sources */,
 				F69F7B302609358800E42A62 /* AsyncOperation.swift in Sources */,
 				F69C187724AE74DB0007283D /* FoldersListAssembly.swift in Sources */,
 			);

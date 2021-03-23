@@ -17,7 +17,7 @@ class FolderRouter: RouterInterface {
         self.router = router
     }
 
-    func preview(photos: [PhotoCellModel], selectedPhotoIndex: Int) {
+    func preview(photos: [SavedPhotoCellModel], selectedPhotoIndex: Int) {
         let assembly = PhotoPreviewAssembly(photos: photos, selectedPhotoIndex: selectedPhotoIndex)
         let viewController = assembly.createPhotoPreview(appRouter: router).viewController
         viewController.modalPresentationStyle = .overFullScreen

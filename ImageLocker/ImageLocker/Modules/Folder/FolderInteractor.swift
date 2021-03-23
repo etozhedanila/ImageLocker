@@ -6,7 +6,7 @@
 //  Copyright © 2020 Виталий Субботин. All rights reserved.
 //
 
-import Foundation
+import Photos
 
 protocol FolderInteractorInput: class {
     
@@ -18,14 +18,22 @@ protocol FolderInteractorInput: class {
 
 protocol FolderInteractorOutput: class {
     
-    func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [PhotoCellModel])
-    func interacor(_ interactor: FolderInteractorInput, didSavePhotos photos: [PhotoCellModel])
+    func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [SavedPhotoCellModel])
+    func interacor(_ interactor: FolderInteractorInput, didSavePhotosWithUrls urls: [URL])
 }
 
 class FolderInteractor: FolderInteractorInput {
     
     weak var presenter: FolderInteractorOutput?
     private let fileManager = FileManager.default
+    
+    private let fetchPhotosUrlsQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "com.vitalySubbotin.ImageLocker.FolderInteractor.fetchPhotosUrlsQueue"
+        queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .userInitiated
+        return queue
+    }()
 
     func fetchPhotos(folder: FolderModel) {
         guard let documents = getDocumentsDirectory() else { return }
@@ -35,7 +43,7 @@ class FolderInteractor: FolderInteractorInput {
         do {
             let fileURLs = try fileManager.contentsOfDirectory(at: folderUrl, includingPropertiesForKeys: nil)
             let photoModels = fileURLs.map {
-                PhotoCellModel(url: $0)
+                SavedPhotoCellModel(url: $0)
             }
             presenter?.interacor(self, didReceivePhotos: photoModels)
         } catch {
@@ -43,26 +51,39 @@ class FolderInteractor: FolderInteractorInput {
         }
     }
 
+    
     func save(folder: FolderModel, photos: [PhotoCellModel]) {
-        let imagesData = photos.compactMap {
-            $0.image?.jpegData(compressionQuality: 1.0)
-        }
-        
-        guard let documents = getDocumentsDirectory() else { return }
-        let filePath =  documents.appendingPathComponent("\(folder.name)").path
-        guard fileManager.fileExists(atPath: filePath) else { fatalError("folder is not exist") }
-        
-        imagesData.forEach {
-            let name = UUID().uuidString + ".jpg"
-            guard let fileName = URL(string: "file://\(filePath)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)?.appendingPathComponent(name) else { return }
-            do {
-                try $0.write(to: fileName)
-            } catch {
-                print("Failed to save image ", error.localizedDescription)
+        let assets = photos.compactMap { $0.asset }
+        var urls: [URL] = []
+        assets.forEach { asset in
+            let operation = FetchPhotoUrlOperation(asset: asset) { (url) in
+                guard let url = url else { return }
+                urls.append(url)
             }
+            self.fetchPhotosUrlsQueue.addOperation(operation)
         }
         
-        presenter?.interacor(self, didSavePhotos: photos)
+        self.fetchPhotosUrlsQueue.addOperation {
+            let imagesData = urls
+                .compactMap { try? Data(contentsOf: $0) }
+            
+            guard let documents = self.getDocumentsDirectory() else { return }
+            let filePath =  documents.appendingPathComponent("\(folder.name)").path
+            guard self.fileManager.fileExists(atPath: filePath) else { fatalError("folder is not exist") }
+            var imageUrls: [URL] = []
+            imagesData.forEach {
+                let name = UUID().uuidString + ".jpg"
+                guard let fileName = URL(string: "file://\(filePath)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)?.appendingPathComponent(name) else { return }
+                do {
+                    try $0.write(to: fileName)
+                    imageUrls.append(fileName)
+                } catch {
+                    print("Failed to save image ", error.localizedDescription)
+                }
+            }
+            
+            self.presenter?.interacor(self, didSavePhotosWithUrls: imageUrls)
+        }
     }
     
     private func getDocumentsDirectory() -> URL? {

@@ -7,32 +7,27 @@
 //
 
 import UIKit
+import Photos
 
 struct PhotoCellModel {
-    
-    init(image: UIImage?, isSelected: Bool = false) {
-        self.image = image
-        self.isSelected = isSelected
-    }
-    
-    init(url: URL) {
-        print(url.path)
-        image = UIImage(contentsOfFile: url.path)
-    }
-    
-    var image: UIImage?
+    var asset: PHAsset
     var isSelected: Bool = false
+    
+    var id: String {
+        return asset.localIdentifier
+    }
+    
+    init(asset: PHAsset) {
+        self.asset = asset
+    }
 }
 
 class PhotoCellConfigurator: CollectionCellConfigurator<PhotoCell, PhotoCellModel> {
     
     init(model: PhotoCellModel) {
-        super.init(model: model, size: PhotoCellConfigurator.photoSize)
-    }
-    
-    static var photoSize: CGSize {
         let width = (UIScreen.main.bounds.width - (3 * 3)) / 4
-        return CGSize(width: width, height: width)
+        let size = CGSize(width: width, height: width)
+        super.init(model: model, size: size)
     }
 }
 
@@ -52,6 +47,9 @@ class PhotoCell: UICollectionViewCell {
         return view
     }()
 
+    private var imageRequestID: PHImageRequestID?
+    private var photoAsset: PHAsset?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(photoView)
@@ -66,6 +64,10 @@ class PhotoCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         photoView.image = nil
+        
+        guard let imageRequestID = imageRequestID else { return }
+        PhotosCacheManager.shared.imageManager.cancelImageRequest(imageRequestID)
+        self.imageRequestID = nil
     }
 
     private func makeConstraints() {
@@ -79,11 +81,31 @@ class PhotoCell: UICollectionViewCell {
     }
 }
 
+// MARK: - CollectionConfigurable
 extension PhotoCell: CollectionConfigurable {
     
     func configure(model: PhotoCellModel) {
-        self.photoView.image = model.image
+        self.photoAsset = model.asset
+        loadPhoto(asset:  model.asset)
         self.overlayView.isHidden = !model.isSelected
+    }
+    
+    private func loadPhoto(asset: PHAsset) {
+        DispatchQueue.global(qos: .userInitiated).async {
+                let size = CGSize(width: 200, height: 200)
+                self.imageRequestID = PhotosCacheManager.shared.imageManager.requestImage(
+                    for: asset,
+                    targetSize: size,
+                    contentMode: .aspectFill,
+                    options: PhotosCacheManager.shared.requestOptions,
+                    resultHandler: { [weak self] (image, _) in
+                        guard let self = self, let image = image, self.photoAsset == asset else { return }
+                        DispatchQueue.main.async {
+                            self.photoView.image = image
+                        }
+                        self.imageRequestID = nil
+                    })
+        }
     }
 }
 

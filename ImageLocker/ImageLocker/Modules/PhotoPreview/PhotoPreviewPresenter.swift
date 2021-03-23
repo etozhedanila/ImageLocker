@@ -13,7 +13,7 @@ protocol PhotoPreviewViewOutput: class {
     var view: PhotoPreviewViewInput? { get set }
     var dataManager: PhotoPreviewDataManager { get }
     var selectedPhotoIndex: Int { get set }
-    var photos: [PhotoCellModel] { get }
+    var photos: [SavedPhotoCellModel] { get }
     
     func viewDidLoad(_ view: PhotoPreviewViewInput)
     func viewDidTapClose(_ view: PhotoPreviewViewInput)
@@ -31,10 +31,10 @@ class PhotoPreviewPresenter: PhotoPreviewViewOutput {
         }
     }
     
-    var photos: [PhotoCellModel]
+    var photos: [SavedPhotoCellModel]
     private let router: PhotoPreviewRouter
     
-    init(dataManager: PhotoPreviewDataManager, router: PhotoPreviewRouter, photos:[PhotoCellModel]) {
+    init(dataManager: PhotoPreviewDataManager, router: PhotoPreviewRouter, photos:[SavedPhotoCellModel]) {
         self.dataManager = dataManager
         self.router = router
         self.photos = photos

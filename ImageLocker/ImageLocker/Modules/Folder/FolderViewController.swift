@@ -27,7 +27,7 @@ class FolderViewController: UIViewController, FolderViewInput {
         collectionView.dataSource = presenter?.dataManager
         collectionView.delegate = presenter?.dataManager
         collectionView.backgroundColor = .black
-        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: String(describing: PhotoCell.self))
+        collectionView.register(SavedPhotoCell.self, forCellWithReuseIdentifier: String(describing: SavedPhotoCell.self))
         return collectionView
     }()
     

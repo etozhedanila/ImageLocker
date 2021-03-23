@@ -10,10 +10,10 @@ import Foundation
 
 class PhotoPreviewAssembly {
     
-    private let photos: [PhotoCellModel]
+    private let photos: [SavedPhotoCellModel]
     private let selectedPhotoIndex: Int
     
-    init(photos: [PhotoCellModel], selectedPhotoIndex: Int = 0) {
+    init(photos: [SavedPhotoCellModel], selectedPhotoIndex: Int = 0) {
         self.photos = photos
         self.selectedPhotoIndex = selectedPhotoIndex
     }
