@@ -19,7 +19,17 @@ class PhotoPreviewDataManager: BaseCollectionDataManager {
 }
 
 extension PhotoPreviewDataManager: UICollectionViewDelegate {
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let width = scrollView.bounds.size.width
+        guard width > 0 else {
+            delegate?.dataManager(self, didScrollToItemAtIndex: 0)
+            return
+        }
+        
+        let currentPage = Int(ceil(x/width))
+        delegate?.dataManager(self, didScrollToItemAtIndex: currentPage)
+    }
 }
 
 extension PhotoPreviewDataManager: UICollectionViewDelegateFlowLayout {
