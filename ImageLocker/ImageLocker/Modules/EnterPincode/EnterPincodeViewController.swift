@@ -9,7 +9,7 @@
 import UIKit
 import LocalAuthentication
 
-protocol EnterPincodeViewInput: class {
+protocol EnterPincodeViewInput: AnyObject {
     
     var viewController: UIViewController { get }
     var presenter: EnterPincodeViewOutput? { get set }
