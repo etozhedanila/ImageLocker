@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PhotoPreviewDataManagerDelegate: class {
+protocol PhotoPreviewDataManagerDelegate: AnyObject {
     
     func dataManager(_ dataManager: PhotoPreviewDataManager, didScrollToItemAtIndex index: Int)
 }
@@ -46,5 +46,9 @@ extension PhotoPreviewDataManager: UICollectionViewDelegateFlowLayout {
         let item = items[indexPath.row]
         let size = CGSize(width: item.width, height: item.height)
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        (cell as? ImagePreviewCell)?.willDisplay()
     }
 }
