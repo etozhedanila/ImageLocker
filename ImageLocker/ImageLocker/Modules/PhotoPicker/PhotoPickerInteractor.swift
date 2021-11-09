@@ -8,12 +8,12 @@
 
 import Photos
 
-protocol PhotoPickerInteractorInput: class {
+protocol PhotoPickerInteractorInput: AnyObject {
     var presenter: PhotoPickerInteractorOutput? { get set }
     func fetchAssets()
 }
 
-protocol PhotoPickerInteractorOutput: class {
+protocol PhotoPickerInteractorOutput: AnyObject {
     func interactor(_ interactor: PhotoPickerInteractorInput, didReceiveAssets assets: [PHAsset])
 }
 

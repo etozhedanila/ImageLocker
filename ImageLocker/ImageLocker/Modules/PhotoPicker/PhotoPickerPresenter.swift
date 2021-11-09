@@ -8,7 +8,7 @@
 
 import Photos
 
-protocol PhotoPickerViewOutput: class {
+protocol PhotoPickerViewOutput: AnyObject {
     
     var view: PhotoPickerViewInput? { get set }
     var dataManager: PhotoPickerDataManager { get }

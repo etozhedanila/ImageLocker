@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FolderViewInput: class, CollectionEditable, Loadable {
+protocol FolderViewInput: AnyObject, CollectionEditable, Loadable {
     
     var viewController: UIViewController { get }
     var presenter: FolderViewOutput? { get set }
@@ -26,7 +26,6 @@ class FolderViewController: UIViewController, FolderViewInput {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = presenter?.dataManager
         collectionView.delegate = presenter?.dataManager
-        collectionView.backgroundColor = .black
         collectionView.register(SavedPhotoCell.self, forCellWithReuseIdentifier: String(describing: SavedPhotoCell.self))
         return collectionView
     }()

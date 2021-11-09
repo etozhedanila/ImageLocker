@@ -8,7 +8,7 @@
 
 import Photos
 
-protocol FolderInteractorInput: class {
+protocol FolderInteractorInput: AnyObject {
     
     var presenter: FolderInteractorOutput? { get set }
 
@@ -16,7 +16,7 @@ protocol FolderInteractorInput: class {
     func save(folder: FolderModel, photos: [PhotoCellModel])
 }
 
-protocol FolderInteractorOutput: class {
+protocol FolderInteractorOutput: AnyObject {
     
     func interacor(_ interactor: FolderInteractorInput, didReceivePhotos photos: [SavedPhotoCellModel])
     func interacor(_ interactor: FolderInteractorInput, didSavePhotosWithUrls urls: [URL])

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FoldersListDataManagerDelegate: class {
+protocol FoldersListDataManagerDelegate: AnyObject {
     
     func dataManager(_ dataManager: FoldersListDataManager, didSelectFolderAt row: Int)
     func dataManager(_ dataManager: FoldersListDataManager, didRemoveDirectoryAt row: Int)

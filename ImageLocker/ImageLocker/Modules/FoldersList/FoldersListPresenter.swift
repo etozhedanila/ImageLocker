@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FoldersListViewOutput: class {
+protocol FoldersListViewOutput: AnyObject {
     
     var view: FoldersListViewInput? { get set }
     var dataManager: FoldersListDataManager { get }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PincodeViewDelegate: class {
+protocol PincodeViewDelegate: AnyObject {
     
     func pincodeView(_ pincodeView: PincodeView, didFinishEnterPincode pincode: String)
 }

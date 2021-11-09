@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-protocol CreatePinViewInput: class {
+protocol CreatePinViewInput: AnyObject {
     
     var presenter: CreatePinViewOutput? { get set }
     var viewController: UIViewController { get }

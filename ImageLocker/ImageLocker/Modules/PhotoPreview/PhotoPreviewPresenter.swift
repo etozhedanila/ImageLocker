@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PhotoPreviewViewOutput: class {
+protocol PhotoPreviewViewOutput: AnyObject {
     
     var view: PhotoPreviewViewInput? { get set }
     var dataManager: PhotoPreviewDataManager { get }

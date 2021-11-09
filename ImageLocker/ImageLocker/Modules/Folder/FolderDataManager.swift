@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FolderDataManagerDelegate: class {
+protocol FolderDataManagerDelegate: AnyObject {
     
     func dataManager(_ dataManager: FolderDataManager, didSelectPhotoAt index: Int)
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CreatePinViewOutput: class {
+protocol CreatePinViewOutput: AnyObject {
     
     var view: CreatePinViewInput? { get set }
 

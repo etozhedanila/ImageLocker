@@ -21,7 +21,7 @@ enum EditionType {
     case update
 }
 
-protocol TableEditable: class {
+protocol TableEditable: AnyObject {
     
     var tableView: UITableView { get }
 }

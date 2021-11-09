@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol CreatePinInteractorInput: class {
+protocol CreatePinInteractorInput: AnyObject {
     
     var presenter: CreatePinInteractorOutput? { get set }
 
     func save(pincode: String)
 }
 
-protocol CreatePinInteractorOutput: class {
+protocol CreatePinInteractorOutput: AnyObject {
     
     func interactorDidSavePincode(_ interactor: CreatePinInteractorInput)
 }

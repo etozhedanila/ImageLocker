@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PhotoPickerViewInput: class, CollectionEditable, Loadable {
+protocol PhotoPickerViewInput: AnyObject, CollectionEditable, Loadable {
     
     var viewController: UIViewController { get }
     var presenter: PhotoPickerViewOutput? { get set }

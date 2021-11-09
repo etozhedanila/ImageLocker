@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PhotoPickerDataManagerDelegate: class {
+protocol PhotoPickerDataManagerDelegate: AnyObject {
     
     func dataManager(_ dataManager: PhotoPickerDataManager, didSelectPhotoAt index: Int)
 }

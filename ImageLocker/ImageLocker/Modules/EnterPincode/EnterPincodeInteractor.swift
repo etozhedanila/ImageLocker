@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol EnterPincodeInteractorInput: class {
+protocol EnterPincodeInteractorInput: AnyObject {
     var presenter: EnterPincodeInteractorOutput? { get set }
 
     func check(pincode: String)
 }
 
-protocol EnterPincodeInteractorOutput: class {
+protocol EnterPincodeInteractorOutput: AnyObject {
     func interactor(_ interactor: EnterPincodeInteractorInput, didCompressSuccessful isSuccess: Bool)
 }
 

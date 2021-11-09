@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FoldersListInteractorInput: class {
+protocol FoldersListInteractorInput: AnyObject {
     
     var presenter: FoldersListInteractorOutput? { get set }
 
@@ -17,7 +17,7 @@ protocol FoldersListInteractorInput: class {
     func remove(folder: FolderModel)
 }
 
-protocol FoldersListInteractorOutput: class {
+protocol FoldersListInteractorOutput: AnyObject {
     
     func interactor(_ interactor: FoldersListInteractorInput, didLoadDirectories directories: [String])
     func interactor(_ interactor: FoldersListInteractorInput, didCreateFolder name: String)

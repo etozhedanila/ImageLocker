@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EnterPincodeViewOutput: class {
+protocol EnterPincodeViewOutput: AnyObject {
     
     var view: EnterPincodeViewInput? { get set }
     func viewDidLoad(_ view: EnterPincodeViewInput)

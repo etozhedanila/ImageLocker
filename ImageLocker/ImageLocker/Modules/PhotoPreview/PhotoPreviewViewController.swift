@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PhotoPreviewViewInput: class, CollectionEditable {
+protocol PhotoPreviewViewInput: AnyObject, CollectionEditable {
     
     var viewController: UIViewController { get }
     var presenter: PhotoPreviewViewOutput? { get set }
