@@ -28,7 +28,6 @@ class FoldersListViewController: UIViewController, FoldersListViewInput {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .black
         tableView.dataSource = self.presenter?.dataManager
         tableView.delegate = self.presenter?.dataManager
         tableView.register(FolderCell.self, forCellReuseIdentifier: String(describing: FolderCell.self))

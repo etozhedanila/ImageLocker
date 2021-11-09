@@ -63,9 +63,9 @@ class FolderInteractor: FolderInteractorInput {
             self.fetchPhotosUrlsQueue.addOperation(operation)
         }
         
-        self.fetchPhotosUrlsQueue.addOperation {
-            let imagesData = urls
-                .compactMap { try? Data(contentsOf: $0) }
+        self.fetchPhotosUrlsQueue.addOperation { [weak self] in
+            guard let self = self else { return }
+            let imagesData = urls.compactMap { try? Data(contentsOf: $0) }
             
             guard let documents = self.getDocumentsDirectory() else { return }
             let filePath =  documents.appendingPathComponent("\(folder.name)").path

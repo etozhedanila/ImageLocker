@@ -31,7 +31,7 @@ class FolderViewController: UIViewController, FolderViewInput {
     }()
     
     var loader: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .white)
+        let view = UIActivityIndicatorView()
         view.isHidden = true
         return view
     }()

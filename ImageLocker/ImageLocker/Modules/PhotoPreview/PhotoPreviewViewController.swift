@@ -38,6 +38,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         return UIBarButtonItem(title: LocalizedString.close, style: .plain, target: self, action: #selector(closeDidTapped(sender:)))
     }
     
+    private var defaultBarBackgroundColor: UIColor?
     private var defaultTintColor: UIColor?
     private var defaultBarTintColor: UIColor?
     private var defaultTitleTextAttributes: [NSAttributedString.Key : Any]?
@@ -54,9 +55,10 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupStatusBar()
         makeConstraints()
         presenter?.viewDidLoad(self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +86,8 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         defaultTintColor = navigationController?.navigationBar.tintColor
         defaultBarTintColor = navigationController?.navigationBar.barTintColor
         defaultTitleTextAttributes = navigationController?.navigationBar.titleTextAttributes
+        defaultBarBackgroundColor = navigationController?.navigationBar.backgroundColor
+        navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -93,6 +97,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         navigationController?.navigationBar.barTintColor = defaultBarTintColor
         navigationController?.navigationBar.tintColor = defaultTintColor ?? .blue
         navigationController?.navigationBar.titleTextAttributes = defaultTitleTextAttributes
+        navigationController?.navigationBar.backgroundColor = defaultBarBackgroundColor
     }
     
     private func makeConstraints() {
@@ -103,5 +108,12 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
     
     @objc private func closeDidTapped(sender: UIBarButtonItem) {
         presenter?.viewDidTapClose(self)
+    }
+    
+    private func setupStatusBar() {
+        let statusBarFrame = UIApplication.shared.statusBarFrame
+        let statusBarView = UIView(frame: statusBarFrame)
+        self.view.addSubview(statusBarView)
+        statusBarView.backgroundColor = .black
     }
 }

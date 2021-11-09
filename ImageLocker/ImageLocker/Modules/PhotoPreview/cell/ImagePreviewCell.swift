@@ -34,6 +34,7 @@ class ImagePreviewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .black
         contentView.addSubview(scrollView)
         scrollView.addSubview(photoView)
         configureGesture()

@@ -27,7 +27,6 @@ class FolderCell: UITableViewCell {
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.textColor = .white
         return label
     }()
 
@@ -40,7 +39,7 @@ class FolderCell: UITableViewCell {
     
     private let separator: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .gray
         return view
     }()
 
@@ -49,7 +48,7 @@ class FolderCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(folderImage)
         contentView.addSubview(separator)
-        backgroundColor = .black
+        backgroundColor = .white
         makeConstraints()
     }
 
