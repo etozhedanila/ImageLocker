@@ -31,21 +31,14 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         collectionView.isPagingEnabled = true
         collectionView.register(ImagePreviewCell.self, forCellWithReuseIdentifier: String(describing: ImagePreviewCell.self))
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .black
         return collectionView
     }()
-    
-    private var closeButton: UIBarButtonItem {
-        return UIBarButtonItem(title: LocalizedString.close, style: .plain, target: self, action: #selector(closeDidTapped(sender:)))
-    }
     
     private var defaultBarBackgroundColor: UIColor?
     private var defaultTintColor: UIColor?
     private var defaultBarTintColor: UIColor?
     private var defaultTitleTextAttributes: [NSAttributedString.Key : Any]?
-    
-    private enum LocalizedString {
-        static let close = "Закрыть"
-    }
     
     override func loadView() {
         super.loadView()
@@ -59,7 +52,10 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         makeConstraints()
         presenter?.viewDidLoad(self)
         
+        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,21 +77,13 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
     }
     
     private func setupNavigationBar() {
-        navigationItem.hidesBackButton = true
-        navigationItem.rightBarButtonItem = closeButton
-        defaultTintColor = navigationController?.navigationBar.tintColor
-        defaultBarTintColor = navigationController?.navigationBar.barTintColor
         defaultTitleTextAttributes = navigationController?.navigationBar.titleTextAttributes
         defaultBarBackgroundColor = navigationController?.navigationBar.backgroundColor
         navigationController?.navigationBar.backgroundColor = .black
-        navigationController?.navigationBar.barTintColor = .black
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     private func resetToDefaultNavigationBar() {
-        navigationController?.navigationBar.barTintColor = defaultBarTintColor
-        navigationController?.navigationBar.tintColor = defaultTintColor ?? .blue
         navigationController?.navigationBar.titleTextAttributes = defaultTitleTextAttributes
         navigationController?.navigationBar.backgroundColor = defaultBarBackgroundColor
     }
@@ -106,7 +94,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewViewInput {
         }
     }
     
-    @objc private func closeDidTapped(sender: UIBarButtonItem) {
+    @objc private func close() {
         presenter?.viewDidTapClose(self)
     }
     
